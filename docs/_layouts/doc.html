@@ -4,19 +4,6 @@
     {{ content }} 
 </section>
 
-<section>
-  {{ page.date }}<hr>
-  {{ page.url }}<hr>
-  {{ page.collection }}<hr>
-  {{ page.type }}<hr>
-  {{ page.image }}<hr>
-  {% for product in page %}
-  {{ product }}<br>
-  {% else %}
-    The collection is empty..
-  {% endfor %}
-</section>
-
 {% assign related_tiles = site.docs | where_exp: "item", "item.type == page.type and item.title != page.title" %}
 
 <section>
@@ -33,6 +20,17 @@
     </article>
 </section>
 
-
+<section>
+  {{ page.date }}<hr>
+  {{ page.url }}<hr>
+  {{ page.collection }}<hr>
+  {{ page.type }}<hr>
+  {{ page.image }}<hr>
+  {% for product in page %}
+  {{ product }}<br>
+  {% else %}
+    The collection is empty..
+  {% endfor %}
+</section>
 
 {% include _footer.html %}

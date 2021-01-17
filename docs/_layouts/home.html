@@ -1,5 +1,4 @@
 {% include _header.html %}
-    <!-- Banner -->
     <section class="banner">
         <div class="inner">
             <h1 class="container">Bienvenue</h1>
@@ -9,21 +8,10 @@
             </div>
         </div>
     </section>
-
-    <!-- <section>
-        {% for tt in site.collections %}
-        {{ tt.label }}<br>
-        {% endfor %}
-    </section> -->
-
-    <!-- One -->
-        {% include _tiles.html %}
-    <!-- Two -->
-
-    <section id="two" class="container p2">
-        <h2>Nouvel arrivant ?</h2>
+    {% include _tiles.html %}
+    <section class="container p2">
+        <h2>Aspirant Développeur ?</h2>
         {{ content }}
-        <a class="action" href="/guides/01-demarrage.html" class="button next">Suivez le guide de démarrage</a>
+        <a class="action" href="/guides/" class="button next">Suivez les guides de démarrage</a>
     </section>
-
 {% include _footer.html %}

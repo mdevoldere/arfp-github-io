@@ -1,0 +1,28 @@
+{% include _header.html %}
+  {% assign related_tiles = site.data.authors %}
+  <section class="container">
+    <h1>{{ page.title }}</h1>
+    <img src="/assets/img/banner-authors.jpg" alt="Auteurs">
+    <p>Nous remercions chaleureusement toutes les personnes qui ont participées de près ou de loin à ce projet.</p>
+    <p>La majorité des contributions sont réalisées par les formateurs et stagiaires du <a href="http://www.arfp.asso.fr">Centre de Réadaptation de Mulhouse</a>. 
+      Les contributions externes sont acceptées si toutes les règles définies dans le fichier <a href="{{ site.github_repo }}blob/main/CONTRIBUTING.md">CONTRIBUTING</a> sont respectées ;) </p>
+    <h2>Webmasters</h2>
+    <ul>
+    {% for webmaster in related_tiles.webmasters %}
+      <li>{{ webmaster }}</li>
+    {% endfor %}
+    </ul>
+    <h2>Développeurs</h2>
+    <ul>
+    {% for developer in related_tiles.developers %}
+      <li>{{ developer }}</li>
+    {% endfor %}
+    </ul>
+    <h2>Rédacteurs</h2>
+    <ul>
+    {% for editor in related_tiles.editors %}
+      <li>{{ editor }}</li>
+    {% endfor %}
+    </ul>
+  </section>
+{% include _footer.html %}

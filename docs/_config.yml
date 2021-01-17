@@ -30,7 +30,8 @@ sass:
   sass_dir: _sass
 
 markdown: kramdown
-
+#kramdown:
+#  parse_block_html: true
 
 #collections
 # collections_dir: content

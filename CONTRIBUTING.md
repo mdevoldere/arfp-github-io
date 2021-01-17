@@ -15,12 +15,11 @@ Ce projet utilise Git. Pour l'installer et découvrir l'outil, rendez-vous sur [
 2. Récupérez le code de votre fork.
 4. Lorsque nous travaillons avec Git, nous utilisons un processus de développement basé sur "une branche par fonctionnalité/bug".
    La première chose à faire une fois que votre projet est installé est donc de créer une branche pour votre travail.
-   
-   Procédure (à réaliser dans votre fork) :
-   - Récupérer la version la plus récente de la branche `gh-develop` du dépôt actuel vers votre dépôt
-   - Ouvrir un ticket pour détailler ce que vous allez faire (ou répondre au ticket existant le cas échant).
-   - Une fois votre code écrit, l'envoyer sur votre fork (`git push`) et une fois votre modification terminée, 
-     créer une pull request vers la branche `gh-develop` pour proposer vos modifications (pensez à lier votre pull-request au ticket correspondant). 
+5. Procédure (à réaliser dans votre fork) :
+   1. Récupérer la version la plus récente de la branche `develop` du dépôt actuel vers votre dépôt
+   2. Ouvrir un ticket pour détailler ce que vous allez faire (ou commenter le ticket existant le cas échant).
+   3. Une fois votre code écrit, l'envoyer sur votre fork (`git push`) et une fois votre modification terminée, 
+     créer une pull request vers la branche `develop` pour proposer vos modifications (pensez à lier votre pull-request au ticket correspondant). 
 
 Vous voilà prêt à contribuer !
 
@@ -111,4 +110,4 @@ pour tester, analyser et vérifier votre code (ce processus s'appelle l'intégra
 Si les tests automatisés ne se passent pas correctement alors vous devez corriger votre code. Vous pouvez cliquer sur "Details" pour
 comprendre le problème. Pour réenvoyer du code dans la pull request, réexécutez simplement un push sur la même branche sur votre fork.
 
-Une fois votre code prêt et qu'il passe avec succès les différents tests humains et automatisés, votre pull-request sera acceptée et votre travail sera intégré à notre branche `develop` en attente pour la prochaine mise en ligne (le site est syynchronisé sur la branche `gh-pages`).
+Une fois votre code prêt et qu'il passe avec succès les différents tests humains et automatisés, votre pull-request sera acceptée et votre travail sera intégré à notre branche `develop` en attente pour la prochaine mise en ligne (le site est synchronisé sur la branche `main`).
