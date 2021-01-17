@@ -1,0 +1,68 @@
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+
+.full {
+    width: 100%;
+    max-width: 100%;
+}
+
+.flex, .flex2, .flex3, .flex4, .flex5, .flex6 {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    /*border: 1px solid #900;*/
+}
+
+.flex > *, .flex2 > *, .flex3 > *, .flex4 > *, .flex5 > *, .flex6 > * {
+    /*flex:1 1 auto;*/
+    display: inline-block;
+    transition: all ease .6s;
+    /*border: 1px solid #009;*/
+    width: 100%;
+}
+
+.flex.center {
+    justify-content: center;
+}
+
+.flex.left {
+    justify-content: flex-start;
+}
+
+.gap10 {
+    gap: 10px;
+}
+
+
+@media (min-width: 640px) {
+    .flex2 > *, .flex3 > *, .flex4 > *, .flex5 > *, .flex6 > * 
+    { flex-basis: 50%; width: 50%; }
+}
+
+@media (min-width: 960px) {
+    .flex2 > *, .flex3 > *, .flex4 > *, .flex5 > *, .flex6 > * 
+    { flex-basis: 50%; width: 50%; }
+}
+
+/* L */
+@media (min-width: 1280px) {
+    .flex3 > *, .flex4 > *, .flex5 > *, .flex6 > * { flex-basis: 32%; width: 32%; }
+}
+
+/* XL */
+@media (min-width: 1600px) {
+    .flex4 > * { flex-basis: 24%; width: 24%; }
+    .flex5 > * { flex-basis: 19%; width: 19%; }
+    .flex6 > * { flex-basis: 15%; width: 15%; }
+}
+
+
+.p2 {
+    padding: 2em 10px;
+}

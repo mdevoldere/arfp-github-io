@@ -1,0 +1,41 @@
+{% include _header.html %}
+    <!-- <section>
+        {% for tt in site.collections %}
+        {{ tt.label }}<br>
+        {% endfor %}
+    </section> -->
+
+    {% assign related_tiles = site.data.formations | sort: 'level'  %}
+    
+    
+    <!-- One -->
+    <section id="one">
+        <h1>{{ page.title }}</h1>
+        {% for tile in related_tiles %}
+        <article>
+          <h2 href="{{ tile.url  | relative_url }}">
+            {{ tile.name }}
+          </h2>
+          <p>{{ tile.fullname }}</p>
+          {% if tile.afpa %}
+          <p><a href="{{ tile.afpa }}">Documents officiels</a></p>
+          {% endif %}
+          <ul>
+            <li>{{ tile.type }}</li>
+            <li>Niveau: {{ tile.level }}</li>
+            <li>Durée: {{ tile.duration }}</li>
+            <li>Objectif: {{ tile.purpose }}</li>
+            <li>Modules: 
+              <ul>
+                {% for module in tile.modules %}
+                <li>{{ module }}</li>
+                {% endfor %}
+              </ul>
+            </li>
+          </ul>
+        </article>
+        {% endfor %}
+    </section>
+    <!-- Two -->
+
+{% include _footer.html %}

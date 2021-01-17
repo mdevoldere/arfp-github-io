@@ -1,0 +1,224 @@
+$dark: #000000;
+$dark2: #111111;
+$light: #FFFFFF;
+$light2: #F5F5F5;
+
+$body: #2a2f4a; // body text | body body-bg
+$header: #242943; // header text | header body-bg
+$txt3: #242943CC; // header text | header body-bg
+
+$body-bg: #F9F9FF;
+$header-bg: #F1F1FF;
+
+$dark-highlight: #2a2f4a11;
+$dark2-highlight: #24294311;
+$light-highlight: #ffffff11;
+$light2-highlight: #f1f1ff11;
+
+$highlight: linear-gradient($dark, $dark2, $light2);
+$highlight2: linear-gradient($light, $light2, $dark);
+
+
+:root {
+    --alert: #d15d4b; /*#cc4b37;*/
+    --warning: #ffb005; /*#ffae00;*/
+    --success: #50df85; /*#3adb76;*/
+    --info: #1a88d1; /*#1779ba;*/
+
+    --dark: #000000;
+    --dark-highlight: #00000011;
+    --light: #ffffff;
+    --light-highlight: #ffffff11;
+    --dark2: #111111;
+    --light2: #f5f5f5;
+
+    --body: #2a2f4a; // body text | body body-bg
+    --body-bg: linear-gradient(#CFDFFF, #A5B8FA);
+    --body-inner: #cfdfffcc;
+    --body-highlight: #cfdfff66;
+
+    --header: #242943; // header text | header body-bg
+    --header-bg: #cfdfff;
+    --header-inner: #242943cc;
+    --header-highlight: #24294333;
+
+    --highlight: linear-gradient(#000000, #111111, #f5f5f5);
+
+    --link: #2a601f;
+    --link-alt: #993300;
+}
+
+/* Dark mode (some colors reversed) */
+.dark {
+    --dark: #ffffff;
+    --dark-highlight: #ffffff11;
+    --light: #000000;
+    --light-highlight: #00000011;
+    --dark2: #f5f5f5;
+    --light2: #111111;
+
+    --body: #f9f9ff; // body text | body body-bg
+    --body-bg: #2a2f4a;
+    --body-inner: #2a2f4acc;
+    --body-highlight: #f9f9ff33;
+
+    --header: #f1f1ff; // header text | header body-bg
+    --header-bg: #242943;
+    --header-inner: #f1f1ffcc;
+    --header-highlight: #f1f1ff33;
+
+    --highlight: linear-gradient(#f5f5ff, #f1f1ff, #111111);
+
+    --link: #CCFFFF;
+    --link-alt: #99FFCC;
+
+}
+
+
+body {
+    background: var(--body-bg);
+    color: var(--body);
+}
+
+a {
+    color: var(--link);
+    border-color: var(--link);
+}
+
+a:hover {
+    color: var(--link-alt);
+    border-color: var(--link-alt);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--header);
+}
+
+main img {
+    box-shadow: 0 0 1px 1px var(--dark);
+    filter: grayscale(.3);
+}
+
+main img:hover {
+    filter: none;
+}
+
+th {
+    background-color: var(--light2);
+    color: var(--dark2);
+}
+
+tr:nth-child(odd) {
+    color: var(--header);
+    background-color: var(--body-bg);
+}
+
+tr:nth-child(odd) {
+    color: var(--body);
+    background-color: var(--header-bg);
+}
+
+section {
+    /*background-color: var(--body-bg);*/
+}
+
+
+/* HEADER */
+
+#top {
+    background-color: var(--header-bg);
+    box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
+}
+
+#logo h1 {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+#menu {
+    background-color: var(--header-bg); 
+}
+
+#menu li {
+    background-color: var(--header-bg);
+}
+
+#menu li ul {
+    background-color: var(--header-bg);
+}
+
+#menu li:hover {
+    background-color: var(--dark-highlight);
+}
+
+
+main h1:first-child, main h2:first-child,
+header > h1, header > h2 {
+    border-bottom: 2px solid var(--body);
+}
+
+/* FOOTER */
+
+#bot {
+    background-color: var(--header-bg);
+}
+
+/* COMPONENTS */
+
+.inner {
+    background-color: var(--body-inner);
+}
+
+.banner {
+    background: url('../img/banner.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.banner .inner {
+    background-color: var(--body-inner);
+}
+
+
+.tile:hover .inner {
+    background: var(--body-highlight);
+}
+
+.tile:hover h3 {
+    background: var(--body-inner);
+    padding-left: .4em;
+}
+
+.tile:hover p {
+    background: var(--body-inner);
+}
+
+
+.badge, .msg {
+    background: var(--body);
+    color: var(--body-bg);
+}
+
+.msg {
+    border-color: var(--black2);
+}
+
+.alert {
+    background-color: var(--alert-body-bg);
+    color: var(--alert-body);
+}
+
+.warning {
+    background-color: var(--warning-body-bg);
+    color: var(--warning-body);
+}
+
+.success {
+    background-color: var(--success-body-bg);
+    color: var(--success-body);
+}
+
+.info {
+    background-color: var(--info-body-bg);
+    color: var(--info-body);
+}

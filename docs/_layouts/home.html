@@ -1,0 +1,29 @@
+{% include _header.html %}
+    <!-- Banner -->
+    <section class="banner">
+        <div class="inner">
+            <h1 class="container">Bienvenue</h1>
+            <div class="container flex2">
+                <p>{{ site.description }}</p>
+                <a href="#one" class="button next scrolly">Démarrer &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section>
+        {% for tt in site.collections %}
+        {{ tt.label }}<br>
+        {% endfor %}
+    </section> -->
+
+    <!-- One -->
+        {% include _tiles.html %}
+    <!-- Two -->
+
+    <section id="two" class="container p2">
+        <h2>Nouvel arrivant ?</h2>
+        {{ content }}
+        <a class="action" href="/guides/01-demarrage.html" class="button next">Suivez le guide de démarrage</a>
+    </section>
+
+{% include _footer.html %}

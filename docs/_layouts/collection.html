@@ -1,0 +1,24 @@
+{% include _header.html %}
+<section>
+    <h1>{{ page.title }}</h1>
+    {{ content }} 
+</section>
+
+<section>
+    <h2>Contenu disponible</h2>
+</section>
+
+<section class="flex2">
+
+{% for tile in site[page.collection] %}
+  <a class="tile" href="{{ tile.url  | relative_url }}" style="background-image: url('{{ tile.image }}');">
+    <div class="inner">
+      <h3>{{ tile.title }}</h3>
+      <p>{{ tile.description }}</p>
+    </div>
+  </a>
+{% endfor %}
+
+</section>
+
+{% include _footer.html %}
