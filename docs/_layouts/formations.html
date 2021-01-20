@@ -1,51 +1,38 @@
 {% include _header.html %}
-    <!-- <section>
-        {% for tt in site.collections %}
-        {{ tt.label }}<br>
-        {% endfor %}
-    </section> -->
-
-    
-    <section id="one" class="flex2">
-      <div><img src="{{ page.image }}" alt="{{ page.title }}" style="margin-left:0"></div>
-      <div>{{ content }}</div>
-    </section>
-
+<section class="container">
+  <header class="flex2">
+    <div><img src="{{ page.image }}" alt="{{ page.title }}" style="margin-left:0"></div>
+    <div>{{ content }}</div>
+  </header>
+  <article>
+    <h1>{{ page.title }}</h1>
+    <p>Les formations sont assurées en présentiel à Mulhouse et/ou en distanciel selon les périodes.</p>
+    <p>Chaque stagiaire dispose d'un accompagnement personnalisé avec pour objectif principal l'accès ou le retour à l'emploi.</p>
     {% assign related_tiles = site.data.formations | sort: 'level'  %}
-    
-    
-    <!-- One -->
-    <section id="two">
-        <h1>{{ page.title }}</h1>
-        
-        <p>Les formations sont assurées en présentiel à Mulhouse et/ou en distanciel selon les périodes.</p>
-        <p>Chaque stagiaire dispose d'un accompagnement personnalisé avec pour objectif principal l'accès ou le retour à l'emploi.</p>
-
-        {% for tile in related_tiles %}
-        <article>
-          <h2 href="{{ tile.url  | relative_url }}">
-            {{ tile.name }}
-          </h2>
-          <p>{{ tile.fullname }}</p>
-          {% if tile.afpa %}
-          <p><i class="fa fa-file-pdf-o"></i> <a href="{{ tile.afpa }}" target="_blank">Documents officiels du titre professionnel {{ tile.name }}</a></p>
-          {% endif %}
+    {% for tile in related_tiles %}
+    <section>
+      <h2 href="{{ tile.url  | relative_url }}">
+        {{ tile.name }}
+      </h2>
+      <p>{{ tile.fullname }}</p>
+      {% if tile.afpa %}
+      <p><i class="fa fa-file-pdf-o"></i> <a href="{{ tile.afpa }}" target="_blank">Documents officiels du titre professionnel {{ tile.name }}</a></p>
+      {% endif %}
+      <ul>
+        <li>{{ tile.type }}</li>
+        <li>Niveau: {{ tile.level }}</li>
+        <li>Durée: {{ tile.duration }}</li>
+        <li>Objectif: {{ tile.purpose }}</li>
+        <li>Modules: 
           <ul>
-            <li>{{ tile.type }}</li>
-            <li>Niveau: {{ tile.level }}</li>
-            <li>Durée: {{ tile.duration }}</li>
-            <li>Objectif: {{ tile.purpose }}</li>
-            <li>Modules: 
-              <ul>
-                {% for module in tile.modules %}
-                <li>{{ module }}</li>
-                {% endfor %}
-              </ul>
-            </li>
+            {% for module in tile.modules %}
+            <li>{{ module }}</li>
+            {% endfor %}
           </ul>
-        </article>
-        {% endfor %}
+        </li>
+      </ul>
     </section>
-    <!-- Two -->
-
+    {% endfor %}
+  </article>
+</section>
 {% include _footer.html %}

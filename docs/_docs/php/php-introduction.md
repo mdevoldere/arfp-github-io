@@ -1,5 +1,4 @@
 --- 
-layout: post
 title: 'Introduction à PHP'
 description: Caractéristiques et fonctionnement
 image: /assets/img/banner-php.jpg

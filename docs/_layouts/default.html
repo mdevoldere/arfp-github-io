@@ -1,5 +1,5 @@
 {% include _header.html %}
-<section class="{% if page.full %}container-full{% else %}container{% endif %}">
+<section class="container{% if page.full %} full{% endif %}">
     <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
     {{ content }}
 </section>

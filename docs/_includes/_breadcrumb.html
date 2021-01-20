@@ -1,6 +1,6 @@
 {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
 {% if crumbs.size > 0 %}
-<nav  aria-label="breadcrumb" class="container breadcrumb">
+<nav  aria-label="breadcrumb" class="container breadcrumb{% if page.full %} full{% endif %}">
     <ol>                
         <li><a href="/"><i class="fa fa-home"></i></a></li>
         {% for crumb in crumbs offset: 1 %}
