@@ -195,7 +195,7 @@ header > h1, header > h2 {
 
 .badge, .msg {
     background: var(--body);
-    color: var(--body-bg);
+    color: var(--light);
 }
 
 .msg {
@@ -203,21 +203,26 @@ header > h1, header > h2 {
 }
 
 .alert {
-    background-color: var(--alert-body-bg);
-    color: var(--alert-body);
+    background-color: var(--alert);
+    color: var(--dark);
 }
 
 .warning {
-    background-color: var(--warning-body-bg);
-    color: var(--warning-body);
+    background-color: var(--warning);
+    color: var(--dark);
 }
 
 .success {
-    background-color: var(--success-body-bg);
-    color: var(--success-body);
+    background-color: var(--success);
+    color: var(--dark);
 }
 
 .info {
-    background-color: var(--info-body-bg);
-    color: var(--info-body);
+    background-color: var(--info);
+    color: var(--dark);
+}
+
+
+.subject {
+    border: 1px solid var(--dark);
 }

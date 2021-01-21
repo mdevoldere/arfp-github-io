@@ -5,8 +5,9 @@ description: 'Documentations, tutoriaux et procédures pas à pas...'
 landing-title: 'Bienvenue'
 image: /assets/img/banner-docs.jpg
 permalink: /docs/
-show_tile: true
+show_tile: 2
 ---
 
+Cette section regroupe différents tutoriaux, procédures et documentations sur les thèmes abordés en formation.
 
-Le métier de développeur repose sur la création de logiciels et/ou de sites internet en s'appuyant sur des langages informatiques...
+Vous pouvez apporter votre pierre à l'édifice et [contribuer à la rédaction ou à la mise à jour du contenu](#) ;)

@@ -1,7 +1,7 @@
 ---
 title: C# &amp; .NET 
+image: /assets/img/banner-dotnet.jpg 
 index: true
-nav-menu: true
 order: 4
 ---
 

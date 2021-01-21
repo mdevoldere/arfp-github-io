@@ -1,10 +1,9 @@
 ---
 layout: formations
-title: Formations 
-description: Description des formations
+title: A propos 
+description: Informations sur le site et les formations
 image: /assets/img/banner-formations.jpg
-permalink: /formations/
-show_tile: true
+show_tile: 1
 ---
 
 Ce site est maintenu par les formateurs et les stagiaires du [Centre de Réadaptation de Mulhouse](http://www.arfp.asso.fr) dans le cadre des formations qui vous sont présentées ci-dessous. 

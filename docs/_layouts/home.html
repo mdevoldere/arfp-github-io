@@ -1,5 +1,5 @@
 {% include _banner.html %}
-{% assign tiles = site.html_pages | where_exp: "item", "item.show_tile == true" %}
+{% assign tiles = site.html_pages | sort: "show_tile" | where_exp: "item", "item.show_tile > 0" %}
 {% include _tiles.html tiles=tiles max=8 %}
 <section class="container p2">
     <h2>Aspirant Développeur ?</h2>

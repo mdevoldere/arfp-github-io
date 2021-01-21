@@ -1,6 +1,9 @@
 ---
 title: Créer un projet web ASP.NET MVC Vide
 description: Procédure pas à pas
+subject: asp-dotnet-core-5
+order: 2
+categories: dotnet asp entityframework
 ---
 
 Créer un nouveau projet web MVC avec ASP.NET 5.x.

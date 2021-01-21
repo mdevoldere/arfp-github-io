@@ -1,24 +1,40 @@
 {% include _header.html %}
+{% assign related_tiles = site.docs | where_exp: "item", "item.type == page.type and item.subject != page.subject and item.title != page.title" %}
+{% if page.index %}
+  {% assign related_serie = site.docs | where_exp: "item", "item.type == page.type and item.order == 1" | sort: "order" %}
+{% else %}
+  {% assign related_serie = site.docs | where_exp: "item", "item.type == page.type and item.subject == page.subject" | sort: "order" %}
+{% endif %}
 <section class="container">
     <h1>{{ page.title }}</h1>
     {{ content }} 
-    <aside>
-      <h2>Contenu associé</h2>
-      <section class="flex2">
-      {% assign related_tiles = site.docs | where_exp: "item", "item.type == page.type and item.title != page.title" %}
-      {% for tile in related_tiles %}
-        <a class="tile" href="{{ tile.url  | relative_url }}" style="background-image: url('{{ tile.image }}');">
-          <div class="inner">
-            <h3>{{ tile.title }}</h3>
-            <p>{{ tile.description }}</p>
-          </div>
-        </a>
-      {% endfor %}
-      </section>
-    </aside>
+
+    <nav class="container subject">
+      <h2>Parcours {{ page.subject | capitalize | replace: "-", " " }} :</h2>
+      <ol>
+        {% for serie in related_serie %}
+        <li><a href="{{ serie.url }}">{{ serie.title }}</a></li>
+        {% endfor %}
+      </ol>
+    </nav>
+
+    {% if page.related %}
+    <nav class="container subject">
+      <h2>Autres ressources</h2>
+      <ol>
+        {% for external in page.related %}
+        <li><a href="{{ external }}">{{ external }}</a></li>
+        {% endfor %}
+      </ol>
+    </nav>
+    {% endif %}
+
+    {% capture related_title %}Contenu associé au thème {{ page.type|capitalize }}{% endcapture %}
+    {% include _tiles_alt.html tiles=related_tiles title=related_title %}
 </section>
 
 <section class="container">
+  <hr>
   {{ page.date }}<hr>
   {{ page.url }}<hr>
   {{ page.collection }}<hr>

@@ -60,18 +60,15 @@ defaults:
       path: "_docs/algo"
     values:
       type: algo   
-      image: /assets/img/banner-algo.jpg 
   - 
     scope:
       path: "_docs/dotnet"
     values:
-      type: dotnet    
-      image: /assets/img/banner-dotnet.jpg 
+      type: dotnet
   - 
     scope:
       path: "_docs/php"
     values:
-      type: php    
-      image: /assets/img/banner-php.jpg 
+      type: php
   
   

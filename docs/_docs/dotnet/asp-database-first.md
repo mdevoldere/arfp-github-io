@@ -1,6 +1,9 @@
 ---
 title: ASP.NET Entity Framework Database First 
 description: Procédure pas à pas
+subject: asp-dotnet-core-5
+order: 4
+categories: dotnet asp entityframework
 ---
 
 Démarrer à partir d'une base de données existante.
@@ -119,7 +122,7 @@ Si vous préférez qu'Entity Framework utilise les Annotations dans les modèles
 ### Définir le nom de la classe DbContext
 
 Par défaut, le nom de la classe de contexte de base de données (DbContext) correspond au nom de la base de donnée utilisée suivi de "Context".
-Si vous souhaitez définir le nom de la classe du contexte de base de données, ajouter l'rrgument "-Context" suivi du nom désiré : 
+Si vous souhaitez définir le nom de la classe du contexte de base de données, ajouter l'argument "-Context" suivi du nom désiré : 
 
 > PM> Scaffold-DbContext Name="DbBooks" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context "MyDatabaseContext" 
 
@@ -129,3 +132,8 @@ Si vous souhaitez définir le nom de la classe du contexte de base de données, 
 Vous pouvez bien entendu combiner tous ces arguments : 
 
 > PM> Scaffold-DbContext Name="DbBooks" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models-Context "MyDatabaseContext" -DataAnnotations -f
+
+
+## Conclusion 
+
+Vous connaissez maintenant la procédure de création d'une couche d'accès aux données à partir d'une base de données existante.

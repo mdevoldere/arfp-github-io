@@ -1,5 +1,6 @@
 ---
 title: Le langage PHP 
+image: /assets/img/banner-php.jpg 
 index: true
 ---
 

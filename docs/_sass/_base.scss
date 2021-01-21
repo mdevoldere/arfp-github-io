@@ -56,6 +56,11 @@ p {
     text-align: justify;
 }
 
+blockquote > p {
+    text-align: left;
+    font-size: .9em;
+}
+
 ul {
     list-style: none;
 }

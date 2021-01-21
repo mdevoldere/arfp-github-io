@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Titre de niveau 1
+show_tile: 4
 ---
 <style>
     .dot {

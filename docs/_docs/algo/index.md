@@ -1,5 +1,6 @@
 ---
 title: Algorithmes 
+image: /assets/img/banner-algo.jpg 
 index: true
 ---
 

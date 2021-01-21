@@ -1,6 +1,12 @@
 ---
 title: Créer un projet web ASP.NET MVC
 description: Procédure
+subject: asp-dotnet-core-5
+order: 1
+categories: dotnet asp entityframework
+related: 
+    - https://www.learnentityframeworkcore.com/
+    - https://docs.microsoft.com/fr-fr/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-5.0&tabs=visual-studio
 ---
 
 Créer un nouveau projet web MVC avec ASP.NET 5.x.
@@ -34,7 +40,7 @@ Par contre, Microsoft a mis en place des conventions de codage qui vous permettr
 - Créer un nouveau projet/solution
 - Sélectionner le modèle "Application web ASP.NET Core"
 
-![Nouveau projet ASP](creer-projet-asp.png)
+![Nouveau projet ASP](img/creer-projet-asp.png)
 
 - Sur l'écran suivant, nommer le projet/solution puis cliquer sur "Créer".
 
