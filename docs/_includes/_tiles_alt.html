@@ -1,11 +1,11 @@
 {% if include.tiles %}
-<article>
+<aside>
   {% if include.title %}
   <header>
     <h2>{{ include.title }}</h2>
   </header>
   {% endif %}
-  <section class="flex2 tiles">
+  <section class="flex2">
   {% for tile in include.tiles limit:include.max %}
     <a class="tile" href="{{ tile.url  | relative_url }}"{% if tile.image %} style="background-image: url('{{ tile.image }}');"{% endif %}>
       <div class="inner">
@@ -15,5 +15,5 @@
     </a>
   {% endfor %}
   </section>
-</article>
+</aside>
 {% endif %}

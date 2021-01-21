@@ -6,6 +6,7 @@ baseurl: "" # site subpath, e.g. /blog
 title: "ARFP" # site main title
 slogan: "Kit Pédagogique"
 description: Ressources et guides pour les formations DWWM et CDA<br /> disponibles sous license Creative Commons.
+banner: /assets/img/banner.jpg 
 
 owner: ARFP
 github: https://github.com/ARFP/
@@ -22,7 +23,6 @@ phone: 03 89 32 46 46
 permalink: /articles/:categories/:title.html # posts permalink format
 
 # homepage tiles
-tiles-source: pages # accepts "posts" or "pages"
 tiles-count: 8
 
 sass:

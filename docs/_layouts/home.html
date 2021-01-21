@@ -1,17 +1,9 @@
-{% include _header.html %}
-    <section class="banner">
-        <div class="inner">
-            <h1 class="container">Bienvenue</h1>
-            <div class="container flex2">
-                <p>{{ site.description }}</p>
-                <a href="#one" class="button next scrolly">Démarrer &rarr;</a>
-            </div>
-        </div>
-    </section>
-    {% include _tiles.html %}
-    <section class="container p2">
-        <h2>Aspirant Développeur ?</h2>
-        {{ content }}
-        <a class="action" href="/guides/" class="button next">Suivez les guides de démarrage</a>
-    </section>
+{% include _banner.html %}
+{% assign tiles = site.html_pages | where_exp: "item", "item.show_tile == true" %}
+{% include _tiles.html tiles=tiles max=8 %}
+<section class="container p2">
+    <h2>Aspirant Développeur ?</h2>
+    <p>Le métier de développeur repose sur la création de logiciels et/ou de sites internet en s'appuyant sur des langages informatiques...</p>
+    <a class="action" href="/guides/" class="button next">Suivez les guides de démarrage</a>
+</section>
 {% include _footer.html %}

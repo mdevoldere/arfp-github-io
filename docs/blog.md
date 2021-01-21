@@ -1,5 +1,5 @@
 ---
-layout: allposts
+layout: posts
 title: Articles
 landing-title: 'All posts'
 nav-menu: true
@@ -8,7 +8,7 @@ image: null
 author: null
 show_tile: false
 order: 1
-permalink: articles/
+permalink: /articles/
 ---
 
 <h1>Articles</h1>
