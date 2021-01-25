@@ -1,9 +1,8 @@
 ---
-layout: page
 title: Les principes fondamentaux du développement
 ---
 
-Cet article décrit les principes de bases que tout développeur devrait suivre.
+Cet article décrit les principes techniques de bases que tout développeur devrait suivre (dans un monde idéal). Il s'agit d'un condensé d'idées générales qui vous aideront dans votre approche du métier ;)
 
 ## Reason Before Coding
 
@@ -33,7 +32,7 @@ Pour chaque tâche à accomplir et ce, avant de vous lancer dans le code :
     2. Identifiez les composants nécessaires (analyse/conception via diagrammes)
     3. Décrivez les algorithmes (raisonnement logique via pseudo code et/ou diagrammes...)
 3. Formalisez les tests
-    1. Prévoyez les scénariis de tests fonctionnels
+    1. Prévoyez les scénarii de tests fonctionnels
     2. Décrivez les tests unitaires
 
 
@@ -70,12 +69,16 @@ Il y a une longue tradition d’association entre l’analyse et la notion d’a
 
 La programmation amène le développeur à transférer des concepts du monde réel (objet physique, processus métier...) vers des concepts informatiques: c'est la notion d'abstraction.
 
-En tant que développeur, vous devez maîtriser les 3 dimensions de la notion d'abstraction :
+En tant que développeur, vous devez maîtriser les 3 dimensions de la notion d'abstraction : 
+- Délimitation d'un concept
+- Identification des différences entre plusieurs concepts
+- Rapprochement des points communs entre différents concepts
 
-### Délimitation du concept (dans le cadre de l'application)
+
+### Délimitation d'un concept (dans le cadre d'une application)
 - Description des caratéristiques
     - Quelles sont les caractéristiques d'un *Employé* (nom, prénom...) ?
-^
+
 - Description des comportements 
     - Que peut faire un *Manager*, que peut-on faire avec ?
 
@@ -89,8 +92,10 @@ En tant que développeur, vous devez maîtriser les 3 dimensions de la notion d'
 ## Languages & Environment before Frameworks
 
 > Apprenez à utiliser les outils de développeurs
+>
 > Maîtrisez les langages *clés* 
-> Comprenez les différents environnement d'exécution
+>
+> Comprenez les différents environnements d'exécution
 
 Avant tout, la maîtrise des outils de collaboration est primordiale.
 - Connaître au moins 1 Système de gestion de version (GIT, Subversion...)
@@ -107,7 +112,7 @@ Gardez en mémoire que les différents *Frameworks* et *CMS* (Content Management
 Maîtrisez les langages servant de support aux frameworks doit donc rester votre priorité.
 
 De la même manière, ces langages et frameworks s'exécutent dans des environnements particuliers (serveur Apache, NodeJS, Androïd etc...).
-La compréhension des ces différents environnements est indispensable.
+La compréhension de ces différents environnements est indispensable.
 
 Par exemple (exemples d'illustration, simplifiés): 
 - Pour maîtriser Symfony, vous aurez besoin de PHP, HTML, CSS, SQL et un serveur Web
@@ -118,20 +123,21 @@ Chaque type d'application nécessite la connaissance de ces langages et environn
 
 
 
-Envisagez votre apprentissage des Frameworks et CMS après avoir
+Envisagez votre apprentissage des Frameworks et CMS après avoir acquis les fondamentaux du développement : algorithmes, abstraction, outils.
 
-## Les principes de bases pour le développement d'applications 
 
-### Keep It Simple, Stupid
+## Keep It Simple, Stupid
 
 Suivez le principe **KISS** (Keep It Simple, Stupid) qui stipule que la plupart des systèmes fonctionnent mieux s’ils restent simples et non compliqués ; par conséquent, la simplicité doit être un objectif clé de la conception et toute complexité inutile doit être évitée. Il faut impérativement se poser la question : quelle est la chose la plus simple qui puisse fonctionner ? Une fois que vous l'avez définie, vous devez l'essayer. Si elle ne fonctionne pas, il faut alors passer à la seconde chose la plus simple etc...
 
-### You Aren't Gonna Need It
+## You Aren't Gonna Need It
 
 Appliquez le principe **YAGNI** (You Aren't Gonna Need It) qui stipule qu'un développeur ne doit ajouter aucune fonctionnalité avant que cela soit jugé nécessaire. D'ailleurs, en ce qui concerne les fonctionnalités en général, "You Aren't Gonna Need It".
 
-### Avoid Learning Anything New
+## Avoid Learning Anything New
 
 Respectez le précepte **ALAN** (Avoid Learning Anything New). Les différents langages, environnements et outils vont et viennent, et chacun d'entre eux requiert l'apprentissage d'un nouvel ensemble de faits, de pratiques et d'une mentalité. Et ils vont probablement s'en aller. Aussi, il est recommandé de n'apprendre quelque chose de nouveau que quand vous y êtes contraint.
 
-« en 1990, j'ai appris le C ++. En 2015, j'ai appris le Python. C'est suffisant ».
+
+
+

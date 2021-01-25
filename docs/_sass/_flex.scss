@@ -29,16 +29,45 @@
     flex-basis: 100%;
 }
 
+.row, .col {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.row {
+    justify-content: space-around;
+}
+
+.col {
+    justify-content: flex-start;
+}
+
+.row > * {
+    flex-basis: 100%;
+    margin: 0;
+}
+
+
+
 @media (min-width: 640px) {
     .flex4 > *, .flex5 > *, .flex6 > * { 
         flex-basis: 50%;
     }
+
+    .row > .c4, .row > .c5, .row > .c6 {
+        flex-basis: 50%;
+    } 
 }
 
 @media (min-width: 960px) {
     .flex2 > *, .flex3 > * { 
         flex-basis: 50%;
     }
+
+    .row > .c2, .row > .c3 {
+        flex-basis: 50%;
+    } 
 }
 
 /* L */
@@ -46,6 +75,10 @@
     .flex3 > *, .flex4 > *, .flex5 > *, .flex6 > * { 
         flex-basis: 32%;
     }
+
+    .row > .c3, .row > .c4, .row > .c5, .row > .c6 {
+        flex-basis: 50%;
+    } 
 }
 
 /* XL */
@@ -53,6 +86,13 @@
     .flex4 > * { flex-basis: 24%; }
     .flex5 > * { flex-basis: 19%; }
     .flex6 > * { flex-basis: 15%; }
+
+    .row > .c1 { flex-basis: 16%; }
+    .row > .c2 { flex-basis: 33%; }
+    .row > .c3 { flex-basis: 50%; }
+    .row > .c4 { flex-basis: 66%; }
+    .row > .c5 { flex-basis: 82%; }
+    .row > .c6 { flex-basis: 100%; }
 }
 
 
