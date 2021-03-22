@@ -87,12 +87,12 @@
     .flex5 > * { flex-basis: 19%; }
     .flex6 > * { flex-basis: 15%; }
 
-    .row > .c1 { flex-basis: 16%; }
-    .row > .c2 { flex-basis: 33%; }
-    .row > .c3 { flex-basis: 50%; }
-    .row > .c4 { flex-basis: 66%; }
-    .row > .c5 { flex-basis: 82%; }
-    .row > .c6 { flex-basis: 100%; }
+    .row > .c1 { flex-basis: 16%; max-width: 16%; }
+    .row > .c2 { flex-basis: 33%; max-width: 33%; }
+    .row > .c3 { flex-basis: 50%; max-width: 50%;}
+    .row > .c4 { flex-basis: 66%; max-width: 66%; }
+    .row > .c5 { flex-basis: 82%; max-width: 82%; }
+    .row > .c6 { flex-basis: 100%; max-width: 100%; }
 }
 
 

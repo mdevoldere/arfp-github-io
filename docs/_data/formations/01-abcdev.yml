@@ -1,0 +1,17 @@
+name: ABCDEV
+fullname: Accès Aux Bases et Compétences en Développement Informatique
+type: Formation pré-qualifiante
+level: 4
+duration: 5 mois
+purpose: Validation du projet professionnel en vue d'une intégration en formation qualifiante
+modules: 
+  - 
+    name: Logique et Algorithmes
+    courses: 
+      - 
+        title: Introduction au métier de développeur
+        url: /
+  - name: Introduction au Développement Orienté Objet
+  - name: Introduction aux bases de données relationnelles
+  - name: Introduction aux technologies du web
+ 

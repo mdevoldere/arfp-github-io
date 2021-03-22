@@ -1,0 +1,11 @@
+name: ISI
+fullname: Ingénieur(e) en Informatique Systèmes d'Informations
+type: Formation qualifiante
+level: 7
+duration: 24 mois en alternance
+purpose: Diplôme d'ingénieur Spécialité informatique
+afpa: https://www.cnam-grandest.fr/formation/cyc9105a
+modules: 
+  - Administration de systèmes d information
+  - Études et développement informatique
+  - Direction des systèmes d information

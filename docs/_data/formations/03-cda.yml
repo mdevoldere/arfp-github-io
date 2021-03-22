@@ -1,0 +1,11 @@
+name: CDA
+fullname: Concepteur/trice Développeur/euse d'Applications
+type: Formation qualifiante
+level: 6
+duration: 16 mois dont 4 mois de stage en entreprise
+purpose: Titre professionnel de niveau 6 délivré par le ministère du travail
+afpa: https://www.banque.di.afpa.fr/espaceemployeurscandidatsacteurs/EGPResultat.aspx?ct=01281m03&type=t
+modules: 
+  - Concevoir et développer des composants d'interface utilisateur en intégrant les recommandations de sécurité
+  - Concevoir et développer la persistance des données en intégrant les recommandations de sécurité
+  - Concevoir et développer une application multicouche répartie en intégrant les recommandations de sécurité

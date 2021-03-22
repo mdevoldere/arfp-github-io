@@ -8,9 +8,8 @@
     <h1>{{ page.title }}</h1>
     <p>Les formations sont assurées en présentiel à Mulhouse et/ou en distanciel selon les périodes.</p>
     <p>Chaque stagiaire dispose d'un accompagnement personnalisé avec pour objectif principal l'accès ou le retour à l'emploi.</p>
-    {% assign related_tiles = site.data.formations %}
-    {% for rel_tile in related_tiles %}
-    {% assign tile = rel_tile[1] %}
+    {% assign related_tiles = site.data.formations | sort: 'level'  %}
+    {% for tile in related_tiles %}
     <section>
       <h2 href="{{ tile.url  | relative_url }}">
         {{ tile.name }}
@@ -27,7 +26,7 @@
         <li>Modules: 
           <ul>
             {% for module in tile.modules %}
-            <li>{{ module.name }}</li>
+            <li>{{ module }}</li>
             {% endfor %}
           </ul>
         </li>
