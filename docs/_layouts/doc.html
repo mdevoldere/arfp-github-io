@@ -8,10 +8,10 @@
 <article class="container">
   <header>
     <h1>{{ page.title }}</h1>
-    <aside class="row">
+    <aside class="row p2">
       <img src="/assets/img/banner-{{ page.type }}.jpg" alt="theme" class="c2" />
       <nav class="c4 container">
-        <h2>Parcours {{ page.subject | capitalize | replace: "-", " " }} :</h2>
+        <h2 style="padding-top: .2em;">Parcours {{ page.subject | capitalize | replace: "-", " " }} :</h2>
         <ol>
           {% for serie in related_serie %}
           <li><a href="{{ serie.url }}">{{ serie.title }}</a></li>
@@ -36,9 +36,10 @@
     {% endif %}
 
     {% capture related_title %}Contenu associé au thème {{ page.type|capitalize }}{% endcapture %}
-    {% include _tiles_alt.html tiles=related_tiles title=related_title %}
+    {% include _tiles_doc.html tiles=related_tiles title=related_title %}
 </section>
 
+<!-- 
 <section class="container">
   <hr>
   {{ page.date }}<hr>
@@ -52,5 +53,5 @@
     The collection is empty..
   {% endfor %}
 </section>
-
+ -->
 {% include _footer.html %}

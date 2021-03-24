@@ -37,4 +37,4 @@ La communauté peut vous aider, vous pouvez (devez !) également aider la commun
 
 Partagez les solutions que vous trouvez, les blogs qui vous ont aidé et ainsi permettre à ceux qui vous suivront de profiter du meilleur pour le meilleur ;)
 
-Partagez vos connaissances, participez aux forums et discussions sur les différents sites et blogs, débattez, proposez des solutions. Rester actif en permanence (prenez quand même quelques congés^^) améliore votre vision du métier et fera de vous un collaborateur avec plus de force de proposition ! 
+Partagez vos connaissances, participez aux forums et discussions sur les différents sites et blogs, débattez, proposez des solutions. Rester actif en permanence améliore votre vision du métier et fera de vous un collaborateur avec plus de force de proposition (prenez quand même quelques congés de temps en temps^^) ! 

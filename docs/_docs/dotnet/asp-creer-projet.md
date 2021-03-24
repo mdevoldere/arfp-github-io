@@ -3,6 +3,7 @@ title: Créer un projet web ASP.NET MVC
 description: Procédure
 subject: asp-dotnet-core-5
 order: 1
+course: 1
 categories: dotnet asp entityframework
 related: 
     - https://www.learnentityframeworkcore.com/

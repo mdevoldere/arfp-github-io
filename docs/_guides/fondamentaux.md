@@ -115,11 +115,11 @@ De la même manière, ces langages et frameworks s'exécutent dans des environne
 La compréhension de ces différents environnements est indispensable.
 
 Par exemple (exemples d'illustration, simplifiés): 
-- Pour maîtriser Symfony, vous aurez besoin de PHP, HTML, CSS, SQL et un serveur Web
-- Pour maîtriser AngularJS, vous aurez besoin de Javascript, HTML, CSS, SQL et d'un serveur NodeJS
-- Pour maîtriser WPF, vous aurez besoin de C#, XAML, XML, VisualStudio IDE, .NET Framework
+- Pour un projet Symfony, vous aurez besoin de PHP, HTML, CSS, SQL et un serveur Web
+- Pour un projet AngularJS, vous aurez besoin de Javascript, HTML, CSS, SQL et d'un serveur NodeJS
+- Pour un projet WPF, vous aurez besoin de C#, XAML, XML, VisualStudio IDE, .NET Framework
 
-Chaque type d'application nécessite la connaissance de ces langages et environnements.
+Chaque type d'application nécessite la connaissance de ses propres langages et environnements.
 
 
 
@@ -138,6 +138,13 @@ Appliquez le principe **YAGNI** (You Aren't Gonna Need It) qui stipule qu'un dé
 
 Respectez le précepte **ALAN** (Avoid Learning Anything New). Les différents langages, environnements et outils vont et viennent, et chacun d'entre eux requiert l'apprentissage d'un nouvel ensemble de faits, de pratiques et d'une mentalité. Et ils vont probablement s'en aller. Aussi, il est recommandé de n'apprendre quelque chose de nouveau que quand vous y êtes contraint.
 
+--- 
 
+## Pour résumer vos priorités
+1. Raisonnement logique
+2. Abstraction
+3. Algorithmes
 
+et bien sur...
 
+- NEVER TRUST USER INPUT

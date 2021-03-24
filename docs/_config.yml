@@ -76,5 +76,10 @@ defaults:
       path: "_docs/php"
     values:
       type: php
+  - 
+    scope:
+      path: "_docs/js"
+    values:
+      type: js
   
   

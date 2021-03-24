@@ -12,7 +12,7 @@
     {% for rel_tile in related_tiles %}
     {% assign tile = rel_tile[1] %}
     <section>
-      <h2 href="{{ tile.url  | relative_url }}">
+      <h2 href="{{ tile.url  | relative_url }}" id="{{ tile.name }}">
         {{ tile.name }}
       </h2>
       <p>{{ tile.fullname }}</p>

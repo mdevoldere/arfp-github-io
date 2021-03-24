@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Titre de niveau 1
+title: "Thème du site"
+image: /assets/img/banner-guides.jpg
 show_tile: 4
 ---
 <style>
@@ -124,32 +125,32 @@ Les classes `.flex`,  `.flex2`,  `.flex3`,  `.flex4`,  `.flex5` et `.flex6` perm
 
 <h4>Flex 2</h4>
 <div class="flex2 demo">
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
 </div>
 
 <h4>Flex 3</h4>
 <div class="flex3 demo">
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
 </div>
 
 <h4>Flex 4</h4>
 <div class="flex4 demo">
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
-<p><img src="/assets/logo.svg" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
+<p><img src="/assets/img/crm-logo.png" alt="example"></p>
 </div>
 
 
