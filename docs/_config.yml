@@ -5,19 +5,19 @@ baseurl: "" # site subpath, e.g. /blog
 
 title: "ARFP" # site main title
 slogan: "Kit Pédagogique"
-description: Ressources et guides pour les formations DWWM et CDA<br /> disponibles sous license Creative Commons.
+description: "Ressources et guides pour les formations DWWM et CDA<br /> disponibles sous license Creative Commons."
 banner: /assets/img/banner.jpg 
 
 owner: ARFP
-github: https://github.com/ARFP/
-github_repo: https://github.com/ARFP/arfp.github.io/
-linkedin: https://www.linkedin.com/company/centre-readaptation-mulhouse/
+github: "https://github.com/ARFP/"
+github_repo: "https://github.com/ARFP/arfp.github.io/"
+linkedin: "https://www.linkedin.com/company/centre-readaptation-mulhouse/"
 
-street_address: 7 boulevard des nations
+street_address: "7 boulevard des nations"
 city: Mulhouse
 zip_code: 68100
 country: France
-phone: 03 89 32 46 46
+phone: "03 89 32 46 46"
 
 
 permalink: /articles/:categories/:title.html # posts permalink format
