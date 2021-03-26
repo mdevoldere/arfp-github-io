@@ -20,7 +20,7 @@ country: France
 phone: "03 89 32 46 46"
 
 
-permalink: /articles/:categories/:title.html # posts permalink format
+permalink: '/articles/:categories/:title.html' # posts permalink format
 
 # homepage tiles
 tiles-count: 8
