@@ -1,9 +1,9 @@
 {% include _header.html %}
-{% assign related_tiles = site.docs | where_exp: "item", "item.type == page.type and item.subject != page.subject and item.title != page.title" %}
+{% assign related_tiles = site.docs | where_exp: "item", "item.type == page.type" | where_exp: "item", " item.subject != page.subject"  | where_exp: "item", " item.title != page.title" %}
 {% if page.index %}
-  {% assign related_serie = site.docs | where_exp: "item", "item.type == page.type and item.order == 1" | sort: "order" %}
+  {% assign related_serie = site.docs | where_exp: "item", "item.type == page.type" | where_exp: "item", " item.order == 1" | sort: "order" %}
 {% else %}
-  {% assign related_serie = site.docs | where_exp: "item", "item.type == page.type and item.subject == page.subject" | sort: "order" %}
+  {% assign related_serie = site.docs | where_exp: "item", "item.type == page.type" | where_exp: "item", " item.subject == page.subject" | sort: "order" %}
 {% endif %}
 <article class="container">
   <header>

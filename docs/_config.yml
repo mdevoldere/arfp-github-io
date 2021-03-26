@@ -1,7 +1,7 @@
 #destination: ./_site/
 
 url: "https://arfp.github.io" # site base hostname & protocol, e.g. http://example.com
-baseurl: "" # site subpath, e.g. /blog
+baseurl: "/arfp-github-io" # site subpath, e.g. /blog
 
 title: "ARFP" # site main title
 slogan: "Kit Pédagogique"

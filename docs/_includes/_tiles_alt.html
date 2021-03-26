@@ -7,7 +7,7 @@
   {% endif %}
   <section class="flex2">
   {% for tile in include.tiles limit:include.max %}
-    <a class="tile" href="{{ tile.url  | relative_url }}" style="{% if tile.image %} background-image: url('{{ tile.image }}');{% endif %}">
+    <a class="tile" href="{{ tile.url  | absolute_url  }}" style="{% if tile.image %} background-image: url('{{ tile.image | absolute_url }}');{% endif %}">
       <div class="inner">
         <h3>{{ tile.title }}</h3>
         <p>{{ tile.description }}</p>

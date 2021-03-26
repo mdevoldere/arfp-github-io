@@ -1,5 +1,5 @@
 {% include _header.html %}
-{% assign related_tiles = site.docs | where_exp: "item", "item.type != 'docs' and item.index == true" | sort: 'date' | reverse %}
+{% assign related_tiles = site.docs | where_exp: "item", "item.type != 'docs'" | where_exp: "item", " item.index == true" | sort: 'date' | reverse %}
 <section class="container">
   <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
   {{ content }}
