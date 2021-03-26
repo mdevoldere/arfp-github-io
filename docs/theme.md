@@ -2,7 +2,7 @@
 layout: default
 title: "Thème du site"
 image: /assets/img/banner-guides.jpg
-show_tile: 4
+show_tile: 99
 ---
 <style>
     .dot {

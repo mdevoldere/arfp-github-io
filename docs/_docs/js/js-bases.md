@@ -12,6 +12,7 @@ related:
 
 Pour démarrer votre apprentissage de Javascript et prendre en main le langage vous devez avoir sur votre machine: 
 
+- Un navigateur web à jour
 - NodeJS : [https://nodejs.org](https://nodejs.org) (installer la version "LTS")
 - Visual Studio Code : [https://code.visualstudio.com](https://code.visualstudio.com/download) (ou un éditeur de code équivalent)
 
@@ -22,7 +23,7 @@ Pour démarrer, créer un répertoire `intro` et créer un fichier `hello.js` à
 
 Dans ce fichier, écrivez le code suivant :
 
-```js
+```javascript
 console.log('Hello World !');
 ```
 
@@ -60,7 +61,7 @@ une fois déclarée, on accède à la variable (pour la lire ou modifier sa vale
 
 Il existe également des variables "spéciales" déclarées avec le mot clé "const". Ce sont les "constantes". Une constante est obligatoirement initialisée avec une valeur. Une fois qu'une constante est initialisée, il n'est plus possible de modifier la référence vers la valeur en mémoire définie à l'initialisation.
 
-```js
+```javascript
 // Les différents types de déclaration
 let variable1 = 1;
 var variable2 = 2;
@@ -85,7 +86,7 @@ Il exsite 2 grandes familles de variables :
 
 Ces notions de valeurs et références seront approfondies dans la suite du parcours.
 
-```js
+```javascript
 
 // booléen : ne peut prendre que 2 valeurs : true ou false (vrai ou faux)
 let vraiOuFaux = true;
@@ -143,7 +144,7 @@ console.log(typeof objet.text);
 - La concaténation permet d'insérer des variables dans une chaine de caractères
     - Les éléments sont alors séparés par le signe "+"
 
-```js
+```javascript
 console.log("--- Expressions --- "); 
 
 var calcul = 1 + 1;

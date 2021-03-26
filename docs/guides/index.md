@@ -1,8 +1,8 @@
 ---
-title: Guide de Démarrage
+title: Guides de Démarrage
 description: 'Pour bien commencer son apprentissage... et devenir un développeur, un vrai !'
 image: /assets/img/banner-guides.jpg
-show_tile: false
+show_tile: 1
 index: true
 ---
 

@@ -5,7 +5,8 @@
     <nav class="container subject">
       <h2>Tous les guides</h2>
       <ul>
-        {% for aGuide in site.guides %}
+        {% assign tiles = site.html_pages | sort: "order" | where_exp: "item", "item.type == 'guide'" %}
+        {% for aGuide in tiles %}
         <li><a href="{{ aGuide.url }}">{{ aGuide.title }}</a></li>
         {% endfor %}
       </ul>

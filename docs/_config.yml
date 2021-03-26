@@ -1,4 +1,4 @@
-destination: ./_site/
+#destination: ./_site/
 
 url: "https://arfp.github.io" # site base hostname & protocol, e.g. http://example.com
 baseurl: "" # site subpath, e.g. /blog
@@ -39,8 +39,8 @@ markdown: kramdown
 collections:
   docs:
     output: true 
-  guides:
-    output: true 
+#  guides:
+#    output: true 
 
 
 defaults:
@@ -57,7 +57,7 @@ defaults:
       type: doc
   - 
     scope:
-      path: "_guides"
+      path: "guides"
     values:
       layout: "guide"
       type: guide

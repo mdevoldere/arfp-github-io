@@ -24,5 +24,15 @@
       <li>{{ editor }}</li>
     {% endfor %}
     </ul>
+    <h2>Remerciements</h2>
+    <p>La participation à ce projet s'étend à toutes les personnes et entités qui ont apportés leurs contributions à leur manière. Nous les remercions chaleureusement.</p>
+    <ul>
+    {% for editor in related_tiles.thanks %}
+      <li>{{ editor }}</li>
+    {% endfor %}
+    </ul>
+    <hr>
+    <p>Vous avez participé au projet et souhaitez voir votre nom apparaître sur cette page ? Ou au contraire, vous ne souhaitez pas voir votre nom diffusé sur cette page malgré votre généreuse contribution ?</p>
+    <p>Contactez-nous: <a href="https://github.com/ARFP">https://github.com/ARFP</a></p>
   </section>
 {% include _footer.html %}
