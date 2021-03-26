@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARFP - Créer un projet web ASP.NET MVC Vide</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/main.js" defer></script>
+</head>
+<body class="dark">
+    <header id="top" role="banner">
+        <a id="logo" href="/" title="ARFP">
+            <h1>ARFP</h1>
+            <p>Kit Pédagogique</p>
+        </a>
+        <nav role="navigation">
+            <ul id="menu">
+                <li><a href="/a-propos/">Formations</a>
+                </li>
+                <li><a href="/guides/">Guides</a>
+                </li>
+                <li><a href="#">Articles</a>
+                    <ul>
+                        
+                    </ul>
+                </li>
+                <li><a href="https://www.linkedin.com/company/centre-readaptation-mulhouse/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/ARFP/"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-sun-o" id="darkmode"></i></a></li>
+            </ul>
+        </nav>
+        <a id="menuToggle" href="#">MENU <i class="fa fa-bars"></i></a>
+    </header>
+    
+    
+    <nav  aria-label="breadcrumb" class="container breadcrumb">
+        <ol>                
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+            
+            
+                <li><a href="/docs/">Docs</a></li>
+            
+            
+            
+                <li><a href="/docs/dotnet/">Dotnet</a></li>
+            
+            
+            
+                <li>Créer un projet web ASP.NET MVC Vide</li>
+            
+            
+        </ol>
+    </nav>
+    
+    <main>    
+    
+
+
+<article class="container">
+  <header>
+    <h1>Créer un projet web ASP.NET MVC Vide</h1>
+    <aside class="row p2">
+      <img src="/assets/img/banner-dotnet.jpg" alt="theme" class="c2" />
+      <nav class="c4 container">
+        <h2 style="padding-top: .2em;">Parcours Asp dotnet core 5 :</h2>
+        <ol>
+          
+          <li><a href="/docs/dotnet/asp-creer-projet">Créer un projet web ASP.NET MVC</a></li>
+          
+          <li><a href="/docs/dotnet/asp-creer-projet-vide">Créer un projet web ASP.NET MVC Vide</a></li>
+          
+          <li><a href="/docs/dotnet/asp-creer-projet-mvc">Créer un projet web ASP.NET (modèle MVC)</a></li>
+          
+          <li><a href="/docs/dotnet/asp-database-first">ASP.NET Entity Framework Database First</a></li>
+          
+        </ol>
+      </nav>
+    </aside>
+  </header>
+  <section>
+    <p>Créer un nouveau projet web MVC avec ASP.NET 5.x.</p>
+
+<p>Ce document présente la procédure pour créer un nouveau projet ASP.NET MVC à partir d’un modèle vide.</p>
+
+<h2 id="créer-un-projet-web-aspnet">Créer un projet web ASP.NET</h2>
+
+<ul>
+  <li>Ouvrir Visual Studio Community</li>
+  <li>Créer un nouveau projet/solution</li>
+  <li>Sélectionner le modèle “Application web ASP.NET Core”</li>
+</ul>
+
+<p><img src="creer-projet-asp.png" alt="Nouveau projet ASP" /></p>
+
+<ul>
+  <li>
+    <p>Sur l’écran suivant, nommer le projet/solution puis cliquer sur “Créer”.</p>
+  </li>
+  <li>
+    <p>Sur l’écran suivant, sélectionner le modèle vide</p>
+  </li>
+</ul>
+
+<p><img src="creer-projet-asp-vide.png" alt="Nouveau projet ASP Vide" /></p>
+
+<h2 id="créer-les-dossiers-et-fichiers-de-base">Créer les dossiers et fichiers de base</h2>
+
+<p>A la racine du projet, créez les dossiers suivants :</p>
+
+<ul>
+  <li><strong>wwwroot</strong>: contient les fichiers statiques du site (css, js, images…)
+    <ul>
+      <li>Dans le dossier <strong>wwwroot</strong>, créez les sous-dossiers <strong>css</strong>, <strong>js</strong> et <strong>img</strong>.</li>
+    </ul>
+  </li>
+  <li><strong>Controllers</strong>: contient les contrôleurs
+    <ul>
+      <li>Dans le dossier <strong>Controllers</strong>, ajoutez un nouveau Contrôleur vide “<strong>HomeController.cs</strong>”.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Models</strong>: contient les modèles</p>
+  </li>
+  <li><strong>Views</strong> : contient les vues HTML
+    <ul>
+      <li>Dans le dossier <strong>Views</strong>, créez les sous-dossiers “<strong>Home</strong>” et “<strong>Shared</strong>”</li>
+      <li>Toujours dans le dossier <strong>Views</strong>, ajoutez un nouvel élément “début de la vue Razor”,  “<strong>_ViewStart.cshtml</strong>”</li>
+      <li>Toujours dans le dossier <strong>Views</strong>, ajoutez un nouvel élément “Importations de la vue Razor”,  “<strong>_ViewImports.cshtml</strong>”</li>
+      <li>Dans le sous-dossier <strong>Views/Shared</strong>, créez un nouvel élément “disposition Razor”, “<strong>_Layout.cshtml</strong>”</li>
+      <li>Dans le sous-dossier <strong>Views/Home</strong>, créez une nouvelle vue, “<strong>Index.cshtml</strong>”</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Votre projet contient désormais la structure de base d’un projet MVC.</p>
+
+<h2 id="configuration-du-projet">Configuration du projet</h2>
+
+<p>Ouvrez le fichier “Startup.cs”.</p>
+
+<p>Pour activer la gestion des contrôleurs et des vues, ajouter le code suivant dans la méthode “<strong>ConfigureServices</strong>” :</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">services</span><span class="p">.</span><span class="nf">AddControllersWithViews</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Dans la méthode “<strong>Configure</strong>”, supprimez le code suivant :</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">app</span><span class="p">.</span><span class="nf">UseEndpoints</span><span class="p">(</span><span class="n">endpoints</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+	<span class="n">endpoints</span><span class="p">.</span><span class="nf">MapGet</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span> <span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+		<span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="nf">WriteAsync</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span>
+	<span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>et remplacez le par le code suivant :</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">app</span><span class="p">.</span><span class="nf">UseDefaultFiles</span><span class="p">();</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">UseStaticFiles</span><span class="p">();</span> 
+
+<span class="n">app</span><span class="p">.</span><span class="nf">UseEndpoints</span><span class="p">(</span><span class="n">endpoints</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="n">endpoints</span><span class="p">.</span><span class="nf">MapControllerRoute</span><span class="p">(</span>
+        <span class="n">name</span><span class="p">:</span> <span class="s">"default"</span><span class="p">,</span>
+        <span class="n">pattern</span><span class="p">:</span> <span class="s">"{controller=Home}/{action=Index}/{id?}"</span>
+    <span class="p">);</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>UseDefaultFiles</strong> active la gestion des extensions web standards</p>
+
+<p><strong>UseStaticFiles</strong> active la gestion des fichiers statiques (css, js, images…) stockés dans le répertoire “<strong>wwwroot</strong>”.</p>
+
+<p><strong>MapControllerRoute</strong> ajoute une route nommée “<strong>name</strong>” dont l’url correspond au format “<strong>pattern</strong>”.</p>
+
+<p><strong>controller</strong>: nom du contrôleur à invoquer.
+<strong>action</strong>: nom de la méthode à exécuter dans le contrôleur invoqué.
+<strong>id</strong>: valeur injectée dans la méthode exécutée (la méthode doit alors posséder un argument nommé “id”).</p>
+
+<p>Ouvrir le fichier “Views/_ViewImports.cshtml”</p>
+
+<p>Ajouter la ligne suivante pour importer l’espace de noms des Helpers HTML Razor (pour gérer les balises spécifiques au moteur de vue Razor)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+</code></pre></div></div>
+
+<p>Votre projet est désormais prêts, vous pouvez maintenant <a href="creer-projet-asp.md">installer Entity Framework</a>.</p>
+
+ 
+  </section>
+
+    
+
+    
+    
+<article class="">
+  
+  <header>
+    <h2>Contenu associé au thème Dotnet</h2>
+  </header>
+  
+  <section class="flex2">
+    
+  
+  </section>
+</article>
+
+
+</section>
+
+<!-- 
+<section class="container">
+  <hr>
+  2021-03-26 16:58:53 +0100<hr>
+  /docs/dotnet/asp-creer-projet-vide<hr>
+  docs<hr>
+  dotnet<hr>
+  <hr>
+  
+  url<br>
+  
+  collection<br>
+  
+  content<br>
+  
+  next<br>
+  
+  path<br>
+  
+  output<br>
+  
+  excerpt<br>
+  
+  previous<br>
+  
+  date<br>
+  
+  categories<br>
+  
+  title<br>
+  
+  id<br>
+  
+  relative_path<br>
+  
+  tags<br>
+  
+  draft<br>
+  
+  layout<br>
+  
+  type<br>
+  
+  description<br>
+  
+  subject<br>
+  
+  order<br>
+  
+  slug<br>
+  
+  ext<br>
+  
+</section>
+ -->
+    </main>
+    <footer id="bot">
+        &copy; Copyright <a href="https://arfp.github.io">ARFP</a> &middot; <a href="https://github.com/ARFP/arfp.github.io/blob/main/CONTRIBUTING.md">Contribuer</a> &middot; <a href="https://devoldere.net">Contacter le webmaster</a>
+    </footer>
+</body>
+</html>

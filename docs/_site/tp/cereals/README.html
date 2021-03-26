@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARFP - TP Cereals</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/main.js" defer></script>
+</head>
+<body class="dark">
+    <header id="top" role="banner">
+        <a id="logo" href="/" title="ARFP">
+            <h1>ARFP</h1>
+            <p>Kit Pédagogique</p>
+        </a>
+        <nav role="navigation">
+            <ul id="menu">
+                <li><a href="/a-propos/">Formations</a>
+                </li>
+                <li><a href="/guides/">Guides</a>
+                </li>
+                <li><a href="#">Articles</a>
+                    <ul>
+                        
+                    </ul>
+                </li>
+                <li><a href="https://www.linkedin.com/company/centre-readaptation-mulhouse/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/ARFP/"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-sun-o" id="darkmode"></i></a></li>
+            </ul>
+        </nav>
+        <a id="menuToggle" href="#">MENU <i class="fa fa-bars"></i></a>
+    </header>
+    
+    
+    <nav  aria-label="breadcrumb" class="container breadcrumb">
+        <ol>                
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+            
+            
+                <li><a href="/tp/">Tp</a></li>
+            
+            
+            
+                <li><a href="/tp/cereals/">Cereals</a></li>
+            
+            
+            
+                <li>TP Cereals</li>
+            
+            
+        </ol>
+    </nav>
+    
+    <main>    
+    
+<section class="container">
+    <h1>TP Cereals</h1>
+    <h1 id="cereals">Cereals</h1>
+
+<p>Pour cet exercice, vous devez créer une application web de gestion d’une liste des céréales du petit-déjeuner. 
+Les informations proviennent d’une API fictive et sont disponibles à travers une API REST disponible à cette adresse :</p>
+<ul>
+  <li>https://devoldere.net/api/cereals/</li>
+</ul>
+
+<p>L’API retourne une collection de céréales avec les informations suivantes :</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Calories</td>
+      <td>Protéïnes</td>
+      <td>Sel</td>
+      <td>Fibres</td>
+      <td>Glucides</td>
+      <td>Sucre</td>
+      <td>Potassium</td>
+      <td>Vitamines</td>
+      <td>Évaluation</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="img/cereals_api.png" alt="exemple" /></p>
+
+<p>Note: Une valeur égale à “-1” signifie que la donnée n’est pas disponible pour ce céréale.</p>
+
+<h2 id="création-de-linterface-utilisateur">Création de l’interface utilisateur</h2>
+
+<ul>
+  <li>Les informations des céréales doivent apparaitre dans un tableau.</li>
+  <li>L’entête de la page contient le titre, un champ de recherche et des filtres de recherche.</li>
+  <li>Les entêtes des colonnes permettent le tri croissant / décroissant des valeurs de ces colonnes.</li>
+</ul>
+
+<p><img src="img/cereals_ui.png" alt="exemple" /></p>
+
+<h4 id="ligne-de-tableau-survolée-">Ligne de tableau survolée :</h4>
+
+<p><img src="img/cereals_uihover.png" alt="exemple" /></p>
+
+<h3 id="couleurs">Couleurs</h3>
+
+<p><img src="img/cereals_colors.png" alt="exemple" /></p>
+
+<h4 id="colonne-nutriscore-ns">Colonne “NutriScore” (NS)</h4>
+
+<p>Le nutri-score (de A à E) est calculé selon l’évaluation :</p>
+
+<ul>
+  <li>A: Plus de 80%</li>
+  <li>B: Entre 70% et 80%</li>
+  <li>C: Entre 55% et 70%</li>
+  <li>D: Entre 35% et 55%</li>
+  <li>E: Moins de 35%</li>
+</ul>
+
+<h4 id="colonne-del">Colonne “DEL”</h4>
+
+<p>La croix rouge permet de supprimer un céréale de l’affichage. Les éléments supprimés ne sont plus disponibles tant que la page n’est pas rechargée.</p>
+
+<h3 id="éléments-supplémentaires">Éléments supplémentaires</h3>
+
+<p>Vous ajouterez également au tableau :</p>
+
+<ul>
+  <li>Le décompte du nombre de céréales affiché en-pied de la colonne Name.</li>
+  <li>La moyenne des calories affichée en-pied de la colonne Calories.</li>
+</ul>
+
+<p><img src="img/cereals_foot.png" alt="exemple" /></p>
+
+<h3 id="filtres-et-recherche">Filtres et Recherche</h3>
+
+<p>L’application proposera des fonctionnalités de recherche en temps réel:</p>
+
+<ul>
+  <li>Un champ de recherche pour rechercher un céréale par son nom</li>
+</ul>
+
+<p><img src="img/cereals_search.png" alt="exemple" /></p>
+
+<ul>
+  <li>Une recherche multi-critères permettant d’afficher :
+    <ul>
+      <li>les céréales ayant un ou plusieurs nutri-score(s) particulier(s) (A,B,C,D ou E)</li>
+      <li>ET</li>
+      <li>les céréales “sans sucre” (taux de sucre inférieur à 1)</li>
+      <li>OU</li>
+      <li>les céréales pauvres en sel (taux de sel inférieur à 50)</li>
+      <li>OU</li>
+      <li>les céréales “boost” (taux de vitamines supérieur ou égal à 25 + taux de fibres supérieur ou égal à 10)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="img/cereals_filter.png" alt="exemple" /></p>
+
+<h2 id="fonctionnement">Fonctionnement</h2>
+
+<ol>
+  <li>Au chargement, l’application télécharge les données via l’api.</li>
+  <li>Les données sont affichées dans le tableau HTML.</li>
+  <li>L’utilisateur peut utiliser la recherche, les filtres et les boutons de suppression.</li>
+</ol>
+
+</section>
+    </main>
+    <footer id="bot">
+        &copy; Copyright <a href="https://arfp.github.io">ARFP</a> &middot; <a href="https://github.com/ARFP/arfp.github.io/blob/main/CONTRIBUTING.md">Contribuer</a> &middot; <a href="https://devoldere.net">Contacter le webmaster</a>
+    </footer>
+</body>
+</html>

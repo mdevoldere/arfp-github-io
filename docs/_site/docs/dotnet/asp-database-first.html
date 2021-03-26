@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARFP - ASP.NET Entity Framework Database First</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/main.js" defer></script>
+</head>
+<body class="dark">
+    <header id="top" role="banner">
+        <a id="logo" href="/" title="ARFP">
+            <h1>ARFP</h1>
+            <p>Kit Pédagogique</p>
+        </a>
+        <nav role="navigation">
+            <ul id="menu">
+                <li><a href="/a-propos/">Formations</a>
+                </li>
+                <li><a href="/guides/">Guides</a>
+                </li>
+                <li><a href="#">Articles</a>
+                    <ul>
+                        
+                    </ul>
+                </li>
+                <li><a href="https://www.linkedin.com/company/centre-readaptation-mulhouse/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/ARFP/"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-sun-o" id="darkmode"></i></a></li>
+            </ul>
+        </nav>
+        <a id="menuToggle" href="#">MENU <i class="fa fa-bars"></i></a>
+    </header>
+    
+    
+    <nav  aria-label="breadcrumb" class="container breadcrumb">
+        <ol>                
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+            
+            
+                <li><a href="/docs/">Docs</a></li>
+            
+            
+            
+                <li><a href="/docs/dotnet/">Dotnet</a></li>
+            
+            
+            
+                <li>ASP.NET Entity Framework Database First</li>
+            
+            
+        </ol>
+    </nav>
+    
+    <main>    
+    
+
+
+<article class="container">
+  <header>
+    <h1>ASP.NET Entity Framework Database First</h1>
+    <aside class="row p2">
+      <img src="/assets/img/banner-dotnet.jpg" alt="theme" class="c2" />
+      <nav class="c4 container">
+        <h2 style="padding-top: .2em;">Parcours Asp dotnet core 5 :</h2>
+        <ol>
+          
+          <li><a href="/docs/dotnet/asp-creer-projet">Créer un projet web ASP.NET MVC</a></li>
+          
+          <li><a href="/docs/dotnet/asp-creer-projet-vide">Créer un projet web ASP.NET MVC Vide</a></li>
+          
+          <li><a href="/docs/dotnet/asp-creer-projet-mvc">Créer un projet web ASP.NET (modèle MVC)</a></li>
+          
+          <li><a href="/docs/dotnet/asp-database-first">ASP.NET Entity Framework Database First</a></li>
+          
+        </ol>
+      </nav>
+    </aside>
+  </header>
+  <section>
+    <p>Démarrer à partir d’une base de données existante.</p>
+
+<p>Dans cette approche, vous procédez à l’ingénierie inverse d’un modèle à partir d’une base de données existante, ce qui entraîne la génération d’une couche d’accès aux données adaptée et directement utilisable.</p>
+
+<p>Ce document montre comment utiliser une base de données existante pour générer un modèle à partir d’une base de données SQL Server dans une application ASP.NET à l’aide de l’interface de ligne de commande NuGet Package Manager avec Microsoft Visual Studio.</p>
+
+<h2 id="autres-ressources">Autres ressources</h2>
+
+<ul>
+  <li><a href="https://www.entityframeworktutorial.net/efcore/create-model-for-existing-database-in-ef-core.aspx">Tutorial sur entityframeworktutorial.net</a></li>
+</ul>
+
+<h2 id="créer-la-base-de-données">Créer la base de données</h2>
+
+<p>La base de données <code class="language-plaintext highlighter-rouge">DbBooks</code> qui sera utilisée dans ce document est présentée ci-dessous. 
+Elle contient 4 tables avec un exemple pour une relation OneToMany et une relation ManyToMany.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">authors</span> 
+<span class="p">(</span>
+    <span class="n">author_id</span> <span class="nb">INT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="k">IDENTITY</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">author_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">UNIQUE</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">);</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">books</span> 
+<span class="p">(</span>
+    <span class="n">book_id</span> <span class="nb">INT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="k">IDENTITY</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">book_title</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">book_date</span> <span class="nb">DATETIME</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">book_author</span> <span class="nb">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">CONSTRAINT</span> <span class="n">FkBooksAuthors</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">book_author</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">authors</span><span class="p">(</span><span class="n">author_id</span><span class="p">);</span>
+<span class="p">);</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">users</span> 
+<span class="p">(</span>
+    <span class="n">user_id</span> <span class="nb">INT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="k">IDENTITY</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">user_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">UNIQUE</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">);</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">readings</span> 
+<span class="p">(</span>
+    <span class="n">read_user</span> <span class="nb">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">read_book</span> <span class="nb">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">(</span><span class="n">read_user</span><span class="p">,</span> <span class="n">read_book</span><span class="p">),</span>
+    <span class="k">CONSTRAINT</span> <span class="n">FkReadingsUsers</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">read_user</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">users</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+    <span class="k">CONSTRAINT</span> <span class="n">FkReadingsBooks</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">read_book</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">books</span><span class="p">(</span><span class="n">book_id</span><span class="p">);</span>
+<span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>Cette base de données sera installée sur un serveur SQLServer local sous le nom “DbBooks”.</p>
+
+<p>La chaîne de connexion suivante sera utilisée pour accéder à la base de données :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Server=(localdb)\mssqllocaldb;Database=DbUsers;Trusted_Connection=True;MultipleActiveResultSets=true
+</code></pre></div></div>
+
+<h2 id="créer-le-projet">Créer le projet</h2>
+
+<p>Ouvrir Visual Studio Community et créez un nouveau projet web “ASP.NET Core 5.x” avec Entity Framework Core.</p>
+
+<ul>
+  <li><a href="asp-creer-projet.html">Créer un projet ASP.NET avec Entity Framework</a></li>
+</ul>
+
+<p>Avant de passer à la suite, assurez-vous des points suivants :</p>
+
+<ul>
+  <li>la base de données est installée</li>
+  <li>la chaine de connexion est correcte</li>
+  <li>le répertoire “Models” existe dans le projet</li>
+</ul>
+
+<h2 id="console-nuget">Console Nuget</h2>
+
+<p>La console du gestionnaire de package NuGet est utilisée pour l’opération d’ingénieurie inverse.</p>
+
+<ul>
+  <li>Définir le projet en tant que “Projet de démarrage”</li>
+  <li>Ouvrir la console Nuget :</li>
+</ul>
+
+<p><img src="img/nuget-ouvrir-console.png" alt="Ouvrir la console nuget" /></p>
+
+<h3 id="créer-les-classes-modèles">Créer les classes Modèles</h3>
+
+<ul>
+  <li>Exécuter la commande suivante :</li>
+</ul>
+
+<blockquote>
+  <p>PM&gt; Scaffold-DbContext Name=”DbBooks” Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models</p>
+</blockquote>
+
+<p>Ceci génère les modèles et le contexte de base de données. consultez le contenu du dossier “Models”…</p>
+
+<p>Scaffold-DbContext = Commande pour lancer l’opération d’ingénieurie inverse</p>
+<ul>
+  <li>“Name=”DbBooks”” = “Nom du ConnectionString dans le fichier appsettings.json”</li>
+  <li>“Microsoft.EntityFrameworkCore.SqlServer” = Pilote (Driver) à utiliser (à adapter au SGBD cible)</li>
+  <li>“-OutputDir Models” = générer les classes dans le répertoire “Models” du projet.</li>
+</ul>
+
+<h3 id="mettre-à-jour-les-classes-modèles">Mettre à jour les classes Modèles</h3>
+
+<ul>
+  <li>Exécuter la commande suivante (même commande avec un argument “-f” supplémentaire) :</li>
+</ul>
+
+<blockquote>
+  <p>PM&gt; Scaffold-DbContext Name=”DbBooks” Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -f</p>
+</blockquote>
+
+<h2 id="configuration-par-défaut">Configuration par défaut</h2>
+
+<p>Par défaut, Entity Framework utilise <a href="https://www.learnentityframeworkcore.com/configuration/fluent-api">Fluent API</a> pour configurer le contexte de base de données.</p>
+
+<h3 id="utiliser-les-annotations">Utiliser les annotations</h3>
+
+<p>Si vous préférez qu’Entity Framework utilise les Annotations dans les modèles, ajoutez l’argument “-DataAnnotations” à la fin de la commande :</p>
+
+<blockquote>
+  <p>PM&gt; Scaffold-DbContext Name=”DbBooks” Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -DataAnnotations</p>
+</blockquote>
+
+<ul>
+  <li><a href="https://www.learnentityframeworkcore.com/configuration/data-annotation-attributes">Plus d’informations sur les annotations</a></li>
+</ul>
+
+<h3 id="définir-le-nom-de-la-classe-dbcontext">Définir le nom de la classe DbContext</h3>
+
+<p>Par défaut, le nom de la classe de contexte de base de données (DbContext) correspond au nom de la base de donnée utilisée suivi de “Context”.
+Si vous souhaitez définir le nom de la classe du contexte de base de données, ajouter l’argument “-Context” suivi du nom désiré :</p>
+
+<blockquote>
+  <p>PM&gt; Scaffold-DbContext Name=”DbBooks” Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context “MyDatabaseContext”</p>
+</blockquote>
+
+<h3 id="combiner-les-arguments">Combiner les arguments</h3>
+
+<p>Vous pouvez bien entendu combiner tous ces arguments :</p>
+
+<blockquote>
+  <p>PM&gt; Scaffold-DbContext Name=”DbBooks” Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models-Context “MyDatabaseContext” -DataAnnotations -f</p>
+</blockquote>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Vous connaissez maintenant la procédure de création d’une couche d’accès aux données à partir d’une base de données existante.</p>
+ 
+  </section>
+
+    
+
+    
+    
+<article class="">
+  
+  <header>
+    <h2>Contenu associé au thème Dotnet</h2>
+  </header>
+  
+  <section class="flex2">
+    
+  
+  </section>
+</article>
+
+
+</section>
+
+<!-- 
+<section class="container">
+  <hr>
+  2021-03-26 16:58:53 +0100<hr>
+  /docs/dotnet/asp-database-first<hr>
+  docs<hr>
+  dotnet<hr>
+  <hr>
+  
+  url<br>
+  
+  collection<br>
+  
+  content<br>
+  
+  next<br>
+  
+  path<br>
+  
+  output<br>
+  
+  excerpt<br>
+  
+  previous<br>
+  
+  date<br>
+  
+  categories<br>
+  
+  title<br>
+  
+  id<br>
+  
+  relative_path<br>
+  
+  tags<br>
+  
+  draft<br>
+  
+  layout<br>
+  
+  type<br>
+  
+  description<br>
+  
+  subject<br>
+  
+  order<br>
+  
+  slug<br>
+  
+  ext<br>
+  
+</section>
+ -->
+    </main>
+    <footer id="bot">
+        &copy; Copyright <a href="https://arfp.github.io">ARFP</a> &middot; <a href="https://github.com/ARFP/arfp.github.io/blob/main/CONTRIBUTING.md">Contribuer</a> &middot; <a href="https://devoldere.net">Contacter le webmaster</a>
+    </footer>
+</body>
+</html>

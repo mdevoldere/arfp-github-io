@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARFP - Créer un projet web ASP.NET MVC</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/main.js" defer></script>
+</head>
+<body class="dark">
+    <header id="top" role="banner">
+        <a id="logo" href="/" title="ARFP">
+            <h1>ARFP</h1>
+            <p>Kit Pédagogique</p>
+        </a>
+        <nav role="navigation">
+            <ul id="menu">
+                <li><a href="/a-propos/">Formations</a>
+                </li>
+                <li><a href="/guides/">Guides</a>
+                </li>
+                <li><a href="#">Articles</a>
+                    <ul>
+                        
+                    </ul>
+                </li>
+                <li><a href="https://www.linkedin.com/company/centre-readaptation-mulhouse/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/ARFP/"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-sun-o" id="darkmode"></i></a></li>
+            </ul>
+        </nav>
+        <a id="menuToggle" href="#">MENU <i class="fa fa-bars"></i></a>
+    </header>
+    
+    
+    <nav  aria-label="breadcrumb" class="container breadcrumb">
+        <ol>                
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+            
+            
+                <li><a href="/docs/">Docs</a></li>
+            
+            
+            
+                <li><a href="/docs/dotnet/">Dotnet</a></li>
+            
+            
+            
+                <li>Créer un projet web ASP.NET MVC</li>
+            
+            
+        </ol>
+    </nav>
+    
+    <main>    
+    
+
+
+<article class="container">
+  <header>
+    <h1>Créer un projet web ASP.NET MVC</h1>
+    <aside class="row p2">
+      <img src="/assets/img/banner-dotnet.jpg" alt="theme" class="c2" />
+      <nav class="c4 container">
+        <h2 style="padding-top: .2em;">Parcours Asp dotnet core 5 :</h2>
+        <ol>
+          
+          <li><a href="/docs/dotnet/asp-creer-projet">Créer un projet web ASP.NET MVC</a></li>
+          
+          <li><a href="/docs/dotnet/asp-creer-projet-vide">Créer un projet web ASP.NET MVC Vide</a></li>
+          
+          <li><a href="/docs/dotnet/asp-creer-projet-mvc">Créer un projet web ASP.NET (modèle MVC)</a></li>
+          
+          <li><a href="/docs/dotnet/asp-database-first">ASP.NET Entity Framework Database First</a></li>
+          
+        </ol>
+      </nav>
+    </aside>
+  </header>
+  <section>
+    <p>Créer un nouveau projet web MVC avec ASP.NET 5.x.</p>
+
+<p>Ce document présente la procédure pour créer un nouveau projet ASP.NET MVC et y installer l’ORM EntityFramework.</p>
+
+<h2 id="aspnet-mvc">ASP.NET MVC</h2>
+
+<p>ASP.NET MVC est un framework Microsoft pour développer rapidement des applications web MVC avec la puissance du langage C#.</p>
+
+<p>MVC signifie Model-View-Controller. Il s’agit d’un modèle architectural utilisé dans le développement de logiciels qui permet de séparer en 3 couches distinctes :</p>
+<ul>
+  <li>la couche Métier (Model)</li>
+  <li>l’interface utilisateur (View)</li>
+  <li>la logique de l’application (Controller)</li>
+</ul>
+
+<p>Dans ASP.NET MVC, il existe des tas de concepts tels que TempData, RouteCollection, ViewData, Linq to SQL, Controller Action, Lambda Expression, Custom Route et HTML Helpers, qui lient tous le modèle, la vue et le contrôleur. Ceci peut rebuter les débutants, mais une fois pris en main, ASP.NET MVC est aussi accessible que tout framework MVC.</p>
+
+<h2 id="convention-vs-configuration">Convention VS Configuration</h2>
+
+<p>Dans ASP.NET MVC, on parle plus de <code class="language-plaintext highlighter-rouge">convention</code> que de <code class="language-plaintext highlighter-rouge">configuration</code>.</p>
+
+<p>Vous aurez peu de configuration à faire dans un projet ASP.NET MVC tout étant plus ou moins prêt à l’emploi.</p>
+
+<p>Par contre, Microsoft a mis en place des conventions de codage qui vous permettront, de gagner beaucoup de temps de développement si vous les suivez à la lettre. L’architecture étant déjà définie, vous pouvez vous concentrer sur le codage de la logique métier.</p>
+
+<h2 id="créer-un-projet-web-aspnet">Créer un projet web ASP.NET</h2>
+
+<ul>
+  <li>Ouvrir Visual Studio Community</li>
+  <li>Créer un nouveau projet/solution</li>
+  <li>Sélectionner le modèle “Application web ASP.NET Core”</li>
+</ul>
+
+<p><img src="img/creer-projet-asp.png" alt="Nouveau projet ASP" /></p>
+
+<ul>
+  <li>
+    <p>Sur l’écran suivant, nommer le projet/solution puis cliquer sur “Créer”.</p>
+  </li>
+  <li>
+    <p>Sur l’écran suivant, vous pouvez sélectionner le modèle vide ou le modèle MVC.</p>
+    <ul>
+      <li><a href="asp-creer-projet-vide.html">Créer un projet ASP.NET à partir d’un modèle vide</a>
+        <ul>
+          <li>Vous devrez alors définir manuellement les composants que vous souhaitez utiliser.</li>
+        </ul>
+      </li>
+      <li><a href="asp-creer-projet-mvc.html">Créer un projet ASP.NET à partir d’un modèle MVC</a>
+        <ul>
+          <li>L’architecture et les composants MVC de bases sont prêt à l’emploi.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="ajouter-entity-framework-core">Ajouter Entity Framework Core</h2>
+
+<ul>
+  <li>Lorsque le projet est créé, ouvrir le gestionnaire de package NuGet
+    <ul>
+      <li>Explorateur de solution –&gt; clic droit sur le nom du projet</li>
+      <li>Cliquer sur “Gérer les packages NuGet”</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="img/nuget-ouvrir.png" alt="Ouvrir Nuget" /></p>
+
+<p>Installer les packages suivants :</p>
+<ul>
+  <li>Microsoft.EntityFrameworkCore.Design (nécessaire pour le package Microsoft.EntityFrameworkCore.Tools)</li>
+  <li>Microsoft.EntityFrameworkCore.Tools (<a href="https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools">plus d’infos</a>)</li>
+  <li>Microsoft.EntityFrameworkCore.SqlServer (ajoute le pilote permettant l’accès à SQLServer)</li>
+</ul>
+
+<p><img src="img/nuget-efcore.png" alt="Nuget Entity Framework" /></p>
+
+<h2 id="ajouter-la-chaine-de-connexion">Ajouter la chaine de connexion</h2>
+
+<ul>
+  <li>Ouvrir le fichier <code class="language-plaintext highlighter-rouge">appsettings.json</code> à la racine de votre projet</li>
+  <li>Ajouter une entrée <code class="language-plaintext highlighter-rouge">ConnectionStrings</code> qui contiendra la ou les chaines de connexion à une ou plusieurs bases de données.</li>
+</ul>
+
+<p>Exemple :</p>
+
+<p><img src="img/asp-appsettings.png" alt="appsettings" /></p>
+
+<ul>
+  <li>Server = Nom d’hôte du serveur de bases de données (ou nom de l’instance SQLServer si sur la même machine)
+    <ul>
+      <li>(localdb)\mssqllocaldb = instance SqlServer locale installée avec Visual Studio.</li>
+    </ul>
+  </li>
+  <li>Database = Nom de la base de données sur le serveur</li>
+  <li>Trusted_Connections = connexion sécurisée requise</li>
+  <li>MultipleActiveResultSets (MARS) = permettre l’exécution de “lots d’instructions SQL”</li>
+</ul>
+
+<h2 id="développer-la-couche-daccès-aux-données">Développer la couche d’accès aux données</h2>
+
+<p>Une fois votre projet créé et Entity Framework installé, vous pouvez passer au développement de la couche d’accès aux données.</p>
+
+<ul>
+  <li><a href="https://www.entityframeworktutorial.net/efcore/entity-framework-core-console-application.aspx">Entity Framework : Approche “Code First”</a></li>
+  <li><a href="asp-database-first.html">Entity Framework : Approche “Database First”</a></li>
+</ul>
+ 
+  </section>
+
+    
+    <nav class="container subject">
+      <h2>Autres ressources</h2>
+      <ol>
+        
+        <li><a href="https://www.learnentityframeworkcore.com/">https://www.learnentityframeworkcore.com/</a></li>
+        
+        <li><a href="https://docs.microsoft.com/fr-fr/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-5.0&tabs=visual-studio">https://docs.microsoft.com/fr-fr/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-5.0&tabs=visual-studio</a></li>
+        
+      </ol>
+    </nav>
+    
+
+    
+    
+<article class="">
+  
+  <header>
+    <h2>Contenu associé au thème Dotnet</h2>
+  </header>
+  
+  <section class="flex2">
+    
+  
+  </section>
+</article>
+
+
+</section>
+
+<!-- 
+<section class="container">
+  <hr>
+  2021-03-26 16:58:53 +0100<hr>
+  /docs/dotnet/asp-creer-projet<hr>
+  docs<hr>
+  dotnet<hr>
+  <hr>
+  
+  url<br>
+  
+  collection<br>
+  
+  content<br>
+  
+  next<br>
+  
+  path<br>
+  
+  output<br>
+  
+  excerpt<br>
+  
+  previous<br>
+  
+  date<br>
+  
+  categories<br>
+  
+  title<br>
+  
+  id<br>
+  
+  relative_path<br>
+  
+  tags<br>
+  
+  draft<br>
+  
+  layout<br>
+  
+  type<br>
+  
+  description<br>
+  
+  subject<br>
+  
+  order<br>
+  
+  course<br>
+  
+  related<br>
+  
+  slug<br>
+  
+  ext<br>
+  
+</section>
+ -->
+    </main>
+    <footer id="bot">
+        &copy; Copyright <a href="https://arfp.github.io">ARFP</a> &middot; <a href="https://github.com/ARFP/arfp.github.io/blob/main/CONTRIBUTING.md">Contribuer</a> &middot; <a href="https://devoldere.net">Contacter le webmaster</a>
+    </footer>
+</body>
+</html>

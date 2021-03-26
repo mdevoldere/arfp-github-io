@@ -10,7 +10,7 @@
 *.userosscache
 *.sln.docstates
 
-docs/_site
+#docs/_site
 docs/.sass-cache
 docs/.jekyll-cache
 docs/.jekyll-metadata

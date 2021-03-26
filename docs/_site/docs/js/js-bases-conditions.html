@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARFP - Les structures conditionnelles</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/main.js" defer></script>
+</head>
+<body class="dark">
+    <header id="top" role="banner">
+        <a id="logo" href="/" title="ARFP">
+            <h1>ARFP</h1>
+            <p>Kit Pédagogique</p>
+        </a>
+        <nav role="navigation">
+            <ul id="menu">
+                <li><a href="/a-propos/">Formations</a>
+                </li>
+                <li><a href="/guides/">Guides</a>
+                </li>
+                <li><a href="#">Articles</a>
+                    <ul>
+                        
+                    </ul>
+                </li>
+                <li><a href="https://www.linkedin.com/company/centre-readaptation-mulhouse/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/ARFP/"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-sun-o" id="darkmode"></i></a></li>
+            </ul>
+        </nav>
+        <a id="menuToggle" href="#">MENU <i class="fa fa-bars"></i></a>
+    </header>
+    
+    
+    <nav  aria-label="breadcrumb" class="container breadcrumb">
+        <ol>                
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+            
+            
+                <li><a href="/docs/">Docs</a></li>
+            
+            
+            
+                <li><a href="/docs/js/">Js</a></li>
+            
+            
+            
+                <li>Les structures conditionnelles</li>
+            
+            
+        </ol>
+    </nav>
+    
+    <main>    
+    
+
+
+<article class="container">
+  <header>
+    <h1>Les structures conditionnelles</h1>
+    <aside class="row p2">
+      <img src="/assets/img/banner-js.jpg" alt="theme" class="c2" />
+      <nav class="c4 container">
+        <h2 style="padding-top: .2em;">Parcours Js basics :</h2>
+        <ol>
+          
+          <li><a href="/docs/js/js-bases">Prise en main de Javascript avec NodeJS</a></li>
+          
+          <li><a href="/docs/js/js-bases-console">La console Javascript</a></li>
+          
+          <li><a href="/docs/js/js-bases-conditions">Les structures conditionnelles</a></li>
+          
+          <li><a href="/docs/js/js-bases-let-var-const">let var et const</a></li>
+          
+        </ol>
+      </nav>
+    </aside>
+  </header>
+  <section>
+    <p>JAVASCRIPT : Structures conditionnelles</p>
+
+<p>Prérequis: variables &amp; expressions</p>
+
+<p>Une condition est une expression booléenne (renvoie toujours vrai ou faux).</p>
+
+<p>Les conditions utilisent principalement les opérateurs de comparaison (<code class="language-plaintext highlighter-rouge">==, ===, &gt;, &lt;, &gt;=, &lt;=, !=, !==</code>).</p>
+
+<p>Les conditions se combinent entre elles grâce aux opérateurs logiques <code class="language-plaintext highlighter-rouge">ET</code> <code class="language-plaintext highlighter-rouge">OU</code> (<code class="language-plaintext highlighter-rouge">&amp;&amp;</code>, <code class="language-plaintext highlighter-rouge">||</code>, <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code>).</p>
+
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">entier</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// valeur de test</span>
+
+
+<span class="kd">let</span> <span class="nx">condition</span> <span class="o">=</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// si entier est égal à 1 alors renvoie vrai sinon renvoie faux.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">condition</span><span class="p">);</span>
+
+<span class="nx">condition</span> <span class="o">=</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// si entier est strictement supérieur à 1 alors renvoie vrai sinon renvoie faux.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">condition</span><span class="p">);</span>
+
+
+<span class="c1">// il est possible de combiner plusieurs conditions en utilisant les opérateurs logiques (ET / OU)...</span>
+
+<span class="nx">condition</span> <span class="o">=</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// si les 2 conditions renvoient vrai alors renvoie vrai sinon renvoie faux</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">condition</span><span class="p">);</span>
+
+<span class="nx">condition</span> <span class="o">=</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// si au moins 1 des 2 conditions renvoie vrai alors renvoie vrai sinon renvoie faux</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">condition</span><span class="p">);</span>
+
+<span class="c1">// ... d'en combiner autant que l'on souhaite (restons toutefois raisonnable)....</span>
+<span class="nx">condition</span> <span class="o">=</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">===</span> <span class="mi">42</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">===</span> <span class="mi">1337</span><span class="p">);</span> 
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">condition</span><span class="p">);</span>
+
+<span class="c1">// ... et de créer des groupes en les encapsulant dans un ensemble (parenthèses)</span>
+<span class="c1">// les groupes sont évalués individuellement</span>
+<span class="nx">condition</span> <span class="o">=</span> <span class="p">((</span><span class="nx">entier</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">===</span> <span class="mi">42</span><span class="p">))</span> <span class="o">||</span> <span class="p">(</span><span class="nx">entier</span> <span class="o">===</span> <span class="mi">1337</span><span class="p">);</span> <span class="c1">// les 3 premieres conditions seront évaluées ensemble</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">condition</span><span class="p">);</span>
+
+
+<span class="c1">// Les conditions sont généralement utilisées afin de déterminer quel code exécuter.</span>
+<span class="c1">// Une ou plusieurs conditions sont évaluées, si lévaluation renvoie vrai, un bloc de code est exécuté, sinon le programme ignore le bloc et se poursuit.</span>
+<span class="c1">// On parle alors de "structures conditionnelles"</span>
+<span class="c1">// Rappel: un bloc de code est délmité par '{' et '}'.</span>
+
+<span class="kd">var</span> <span class="nx">valeur</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">valeur</span> <span class="o">===</span> <span class="mi">42</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// si "valeur" vaut 42, le code se trouvant dans le bloc suivant est exécuté, sinon le bloc est ignoré</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bonne réponse</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span> <span class="c1">// sinon (cas par défaut), le bloc de code suivant est exécuté</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mauvaise réponse</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="c1">// il est possible de gérer plusieurs cas...</span>
+
+<span class="nx">valeur</span> <span class="o">=</span> <span class="mi">1337</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">valeur</span> <span class="o">===</span> <span class="mi">42</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// si "valeur" vaut 42</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bonne réponse</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">valeur</span> <span class="o">===</span> <span class="mi">1337</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// sinon si "valeur" vaut 1337</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="dl">"</span><span class="s2">Réponse de L33t</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span> <span class="c1">// sinon (cas par défaut)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mauvaise réponse</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// ... qui peuvent gérer des conditions combinées</span>
+
+<span class="nx">valeur</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">valeur</span> <span class="o">===</span> <span class="mi">42</span> <span class="o">||</span> <span class="nx">valeur</span> <span class="o">&gt;</span> <span class="mi">42000</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// si "valeur" vaut 42 ou est supérieure à 42000 </span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bonne réponse</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">valeur</span> <span class="o">===</span> <span class="mi">1337</span> <span class="o">||</span> <span class="nx">valeur</span> <span class="o">&gt;</span> <span class="mi">133700</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// sinon si "valeur" vaut 1337 ou est supérieure à 133700</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="dl">"</span><span class="s2">Réponse de champion</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">((</span><span class="nx">valeur</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">===</span> <span class="p">(</span><span class="nx">valeur</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// si les 2 opérations retournent le même résultat</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Incroyable !</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span> <span class="c1">// sinon (cas par défaut)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mauvaise réponse</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+ 
+  </section>
+
+    
+    <nav class="container subject">
+      <h2>Autres ressources</h2>
+      <ol>
+        
+        <li><a href="https://developer.mozilla.org/fr/docs/Learn/JavaScript/First_steps">https://developer.mozilla.org/fr/docs/Learn/JavaScript/First_steps</a></li>
+        
+      </ol>
+    </nav>
+    
+
+    
+    
+<article class="">
+  
+  <header>
+    <h2>Contenu associé au thème Js</h2>
+  </header>
+  
+  <section class="flex2">
+    
+  
+  </section>
+</article>
+
+
+</section>
+
+<!-- 
+<section class="container">
+  <hr>
+  2021-03-26 16:58:53 +0100<hr>
+  /docs/js/js-bases-conditions<hr>
+  docs<hr>
+  js<hr>
+  <hr>
+  
+  url<br>
+  
+  collection<br>
+  
+  content<br>
+  
+  next<br>
+  
+  path<br>
+  
+  output<br>
+  
+  excerpt<br>
+  
+  previous<br>
+  
+  date<br>
+  
+  categories<br>
+  
+  title<br>
+  
+  id<br>
+  
+  relative_path<br>
+  
+  tags<br>
+  
+  draft<br>
+  
+  layout<br>
+  
+  type<br>
+  
+  description<br>
+  
+  subject<br>
+  
+  order<br>
+  
+  related<br>
+  
+  slug<br>
+  
+  ext<br>
+  
+</section>
+ -->
+    </main>
+    <footer id="bot">
+        &copy; Copyright <a href="https://arfp.github.io">ARFP</a> &middot; <a href="https://github.com/ARFP/arfp.github.io/blob/main/CONTRIBUTING.md">Contribuer</a> &middot; <a href="https://devoldere.net">Contacter le webmaster</a>
+    </footer>
+</body>
+</html>

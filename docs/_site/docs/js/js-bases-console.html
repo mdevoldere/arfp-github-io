@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARFP - La console Javascript</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/main.js" defer></script>
+</head>
+<body class="dark">
+    <header id="top" role="banner">
+        <a id="logo" href="/" title="ARFP">
+            <h1>ARFP</h1>
+            <p>Kit Pédagogique</p>
+        </a>
+        <nav role="navigation">
+            <ul id="menu">
+                <li><a href="/a-propos/">Formations</a>
+                </li>
+                <li><a href="/guides/">Guides</a>
+                </li>
+                <li><a href="#">Articles</a>
+                    <ul>
+                        
+                    </ul>
+                </li>
+                <li><a href="https://www.linkedin.com/company/centre-readaptation-mulhouse/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/ARFP/"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-sun-o" id="darkmode"></i></a></li>
+            </ul>
+        </nav>
+        <a id="menuToggle" href="#">MENU <i class="fa fa-bars"></i></a>
+    </header>
+    
+    
+    <nav  aria-label="breadcrumb" class="container breadcrumb">
+        <ol>                
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+            
+            
+                <li><a href="/docs/">Docs</a></li>
+            
+            
+            
+                <li><a href="/docs/js/">Js</a></li>
+            
+            
+            
+                <li>La console Javascript</li>
+            
+            
+        </ol>
+    </nav>
+    
+    <main>    
+    
+
+
+<article class="container">
+  <header>
+    <h1>La console Javascript</h1>
+    <aside class="row p2">
+      <img src="/assets/img/banner-js.jpg" alt="theme" class="c2" />
+      <nav class="c4 container">
+        <h2 style="padding-top: .2em;">Parcours Js basics :</h2>
+        <ol>
+          
+          <li><a href="/docs/js/js-bases">Prise en main de Javascript avec NodeJS</a></li>
+          
+          <li><a href="/docs/js/js-bases-console">La console Javascript</a></li>
+          
+          <li><a href="/docs/js/js-bases-conditions">Les structures conditionnelles</a></li>
+          
+          <li><a href="/docs/js/js-bases-let-var-const">let var et const</a></li>
+          
+        </ol>
+      </nav>
+    </aside>
+  </header>
+  <section>
+    <p>JAVASCRIPT : Affichage dans la console</p>
+
+<p>Prérequis:</p>
+<ul>
+  <li>Savoir utiliser les variables</li>
+</ul>
+
+<p>L’objet “console” permet d’interagir avec :</p>
+<ul>
+  <li>le terminal (avec nodejs)</li>
+  <li>la console du navigateur (scripts intégrés aux pages web)</li>
+</ul>
+
+<hr />
+<p>Testez le code ci-dessous et analysez les résultats affichés dans la console.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Messages simples */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">----- BASIC MESSAGES ----- </span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// affiche un message dans la console</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="dl">"</span><span class="s2">Welcome</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// affiche un message d'information dans la console</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="dl">"</span><span class="s2">You are not logged in</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// affiche un message d'avertissement dans la console</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Matrix Error. Need backup !</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// affiche un message d'erreur dans la console</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="dl">"</span><span class="s2">Debug message</span><span class="se">\n\n</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// affiche une information de débogage</span>
+
+
+
+<span class="cm">/* Messages groupés */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">----- GROUP MESSAGES ----- </span><span class="dl">"</span><span class="p">);</span> <span class="c1">// niveau 0</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">group</span><span class="p">(</span><span class="dl">"</span><span class="s2">Group 1</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// ouverture d'un groupe d'éléments (ie html = &lt;ul&gt;)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item 1.1</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// ajout d'un élément dans le groupe (ie html = &lt;li&gt;&lt;/li&gt;)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item 1.2</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// ajout d'un autre élément</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span> <span class="c1">// fermeture du groupe 1 et retour au niveau supérieur (ie html = &lt;/ul&gt;)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Outer level</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// retour au niveau 0</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">group</span><span class="p">(</span><span class="dl">"</span><span class="s2">Group 2</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// ouverture d'un 2nd groupe d'éléments</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item 2.1</span><span class="dl">"</span><span class="p">);</span> 
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item 2.2</span><span class="dl">"</span><span class="p">);</span> 
+<span class="nx">console</span><span class="p">.</span><span class="nx">group</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item 2.3 (subgroup)</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// ouverture d'un sous-groupe (à l'intérieur du groupe 2)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item 2.3.1</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item 2.3.2</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// possible d'utiliser n'importe quel type de message (ici un warn)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item 2.3.3</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// et ici une error</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span> <span class="c1">// fermeture du sous-groupe et retour dans groupe 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Item.2.4</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span> <span class="c1">// fermeture du groupe 2. Pensez à fermer tous les groupes ouverts !</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Outer level</span><span class="se">\n\n</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// retour au niveau 0</span>
+
+
+<span class="cm">/* Afficher des objets */</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">----- OBJECT DEBUG MESSAGES ----- </span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">motd</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Welcome to our App</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// une simple chaine</span>
+
+<span class="kd">const</span> <span class="nx">roles</span> <span class="o">=</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">guest</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">member</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">admin</span><span class="dl">'</span> <span class="p">];</span> <span class="c1">// création d'un tableau</span>
+
+<span class="kd">const</span> <span class="nx">usr</span> <span class="o">=</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MDevoldere</span><span class="dl">"</span><span class="p">,</span> <span class="na">role</span><span class="p">:</span> <span class="dl">'</span><span class="s1">admin</span><span class="dl">'</span> <span class="p">};</span> <span class="c1">// création d'un objet</span>
+
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">usr</span><span class="p">);</span> <span class="c1">// affiche le contenu de l'objet</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">MOTD: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">motd</span><span class="p">);</span> <span class="c1">// concaténation avec une variable de type string</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">User (type): </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">usr</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> !!!</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// concaténer une chaine et un objet affiche le type de l'objet</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">User (data): </span><span class="dl">'</span><span class="p">,</span> <span class="nx">usr</span><span class="p">,</span> <span class="dl">'</span><span class="s1"> !!!</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// utiliser la virgule pour séparer chaines et objets affiche le contenu de l'objet au lieu du type</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">User Name: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">usr</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// accès à un attribut de usr</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Roles (items): </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">roles</span><span class="p">);</span> <span class="c1">// concaténation avec un tableau (array), chaque élément du tableau sera directement intégré à la chaine</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Roles: (structure)</span><span class="dl">'</span><span class="p">,</span> <span class="nx">roles</span><span class="p">);</span> <span class="c1">// utiliser la virgule pour afficher la structure du tableau</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Role 1: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">roles</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// accès à un élément du tableau</span>
+</code></pre></div></div>
+ 
+  </section>
+
+    
+    <nav class="container subject">
+      <h2>Autres ressources</h2>
+      <ol>
+        
+        <li><a href="https://developer.mozilla.org/fr/docs/Learn/JavaScript/First_steps">https://developer.mozilla.org/fr/docs/Learn/JavaScript/First_steps</a></li>
+        
+      </ol>
+    </nav>
+    
+
+    
+    
+<article class="">
+  
+  <header>
+    <h2>Contenu associé au thème Js</h2>
+  </header>
+  
+  <section class="flex2">
+    
+  
+  </section>
+</article>
+
+
+</section>
+
+<!-- 
+<section class="container">
+  <hr>
+  2021-03-26 16:58:53 +0100<hr>
+  /docs/js/js-bases-console<hr>
+  docs<hr>
+  js<hr>
+  <hr>
+  
+  url<br>
+  
+  collection<br>
+  
+  content<br>
+  
+  next<br>
+  
+  path<br>
+  
+  output<br>
+  
+  excerpt<br>
+  
+  previous<br>
+  
+  date<br>
+  
+  categories<br>
+  
+  title<br>
+  
+  id<br>
+  
+  relative_path<br>
+  
+  tags<br>
+  
+  draft<br>
+  
+  layout<br>
+  
+  type<br>
+  
+  description<br>
+  
+  subject<br>
+  
+  order<br>
+  
+  related<br>
+  
+  slug<br>
+  
+  ext<br>
+  
+</section>
+ -->
+    </main>
+    <footer id="bot">
+        &copy; Copyright <a href="https://arfp.github.io">ARFP</a> &middot; <a href="https://github.com/ARFP/arfp.github.io/blob/main/CONTRIBUTING.md">Contribuer</a> &middot; <a href="https://devoldere.net">Contacter le webmaster</a>
+    </footer>
+</body>
+</html>

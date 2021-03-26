@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARFP - Les principes fondamentaux du développement</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/main.js" defer></script>
+</head>
+<body class="dark">
+    <header id="top" role="banner">
+        <a id="logo" href="/" title="ARFP">
+            <h1>ARFP</h1>
+            <p>Kit Pédagogique</p>
+        </a>
+        <nav role="navigation">
+            <ul id="menu">
+                <li><a href="/a-propos/">Formations</a>
+                </li>
+                <li><a href="/guides/">Guides</a>
+                </li>
+                <li><a href="#">Articles</a>
+                    <ul>
+                        
+                    </ul>
+                </li>
+                <li><a href="https://www.linkedin.com/company/centre-readaptation-mulhouse/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/ARFP/"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-sun-o" id="darkmode"></i></a></li>
+            </ul>
+        </nav>
+        <a id="menuToggle" href="#">MENU <i class="fa fa-bars"></i></a>
+    </header>
+    
+    
+    <nav  aria-label="breadcrumb" class="container breadcrumb">
+        <ol>                
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+            
+            
+                <li><a href="/guides/">Guides</a></li>
+            
+            
+            
+                <li>Les principes fondamentaux du développement</li>
+            
+            
+        </ol>
+    </nav>
+    
+    <main>    
+    
+<section class="container">
+    <h1>Les principes fondamentaux du développement</h1>
+    <p>Cet article décrit les principes techniques de bases que tout développeur devrait suivre (dans un monde idéal). Il s’agit d’un condensé d’idées générales qui vous aideront dans votre approche du métier ;)</p>
+
+<h2 id="reason-before-coding">Reason Before Coding</h2>
+
+<blockquote>
+  <p>Vous voilà face à une tâche à accomplir: un exercice, un projet, une fonctionnalité à ajouter, un bug à corriger etc…</p>
+
+  <p>Vous vous jetez sur votre éditeur de code favori et commencez à coder…</p>
+</blockquote>
+
+<p>Lorsqu’ils s’attèlent à une nouvelle tâche, les développeurs peu expérimentés ont généralement le même réflexe :</p>
+<ul>
+  <li>Ouvrir leur éditeur de code et coder directement.</li>
+</ul>
+
+<p>Cette approche donne l’illusion d’un travail rapide et efficace. C’est pourtant tout le contraire ! 
+En faisant cela, vous vous obligez à réfléchir au problème en même temps que réfléchir à comment le coder. 
+Il est plus raisonnable de travailler sur le 1er point avant d’écrire la moindre ligne de code.</p>
+
+<blockquote>
+  <p>Un bon raisonnement est la clé à toute résolution d’un problème.</p>
+</blockquote>
+
+<p>En tant que développeur, votre première tâche est de bien comprendre l’objectif de la demande client.</p>
+
+<p>Prenez le temps d’analyser la demande et de bien définir les étapes qui vous amèneront à sa résolution.</p>
+
+<p>Pour chaque tâche à accomplir et ce, avant de vous lancer dans le code :</p>
+<ol>
+  <li>Analysez la demande, reformulez-la avec vos propres mots si nécessaire
+    <ol>
+      <li>éliminez toute amibiguïté</li>
+      <li>échangez avec le demandeur si besoin</li>
+    </ol>
+  </li>
+  <li>Planifiez votre travail
+    <ol>
+      <li>Décomposez le problème à résoude en sous problèmes plus simples (planification)</li>
+      <li>Identifiez les composants nécessaires (analyse/conception via diagrammes)</li>
+      <li>Décrivez les algorithmes (raisonnement logique via pseudo code et/ou diagrammes…)</li>
+    </ol>
+  </li>
+  <li>Formalisez les tests
+    <ol>
+      <li>Prévoyez les scénarii de tests fonctionnels</li>
+      <li>Décrivez les tests unitaires</li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="never-trust-user-input">Never Trust User Input</h2>
+
+<blockquote>
+  <p>Ne jamais faire confiance aux données dont vous ne maîrisez pas la provenance</p>
+</blockquote>
+
+<p>Si l’on ne devait retenir qu’une seule règle, ce serait bien celle-ci.</p>
+
+<p>Vous devez <strong>toujours</strong> contrôler les entrées/sorties dans vos programmes et vous assurer de la cohérence des données  manipulées ; principalement celles dont vous ne maîtrisez pas la provenance (saisie utilisateur, paramètres d’url…).</p>
+
+<p>Plus concrètement, avant de manipuler une donnée (variable, saisie utilisateur…) vous devez :</p>
+<ul>
+  <li>Vérifier l’existance de la donnée</li>
+  <li>Contrôler la cohérence de la donnée (contrôle sur le format, plages de valeurs…)</li>
+</ul>
+
+<p>Un utilisateur peut saisir des données eronnées volontairement ou non, il est donc primordial de respecter cette règle.</p>
+
+<p>Passer outre ce principe fondamental expose votre application à des bugs ou pire, à des failles de sécurité.</p>
+
+<h2 id="practice-algorithms-all-the-time">Practice algorithms all the time</h2>
+
+<blockquote>
+  <p>Travaillez votre raisonnement logique en tout temps</p>
+</blockquote>
+
+<p>Un bon développeur est avant tout un bon algorithmicien.</p>
+
+<p>Les algorithmes sont à la base de tout programme. Face aux tâches à accomplir, vous devez garder une approche logique, penser <em>algorithmes</em> et vous extraire des concepts du monde réel.</p>
+
+<h2 id="work-on-your-abstraction-skills">Work on your abstraction skills</h2>
+
+<blockquote>
+  <p>Développez vos capacités d’abstraction.</p>
+</blockquote>
+
+<p>Il y a une longue tradition d’association entre l’analyse et la notion d’abstraction. Celle-ci est généralement considérée comme légitime dans la mesure où l’abstraction apparaît comme un procédé inévitable de toute science.</p>
+
+<p>La programmation amène le développeur à transférer des concepts du monde réel (objet physique, processus métier…) vers des concepts informatiques: c’est la notion d’abstraction.</p>
+
+<p>En tant que développeur, vous devez maîtriser les 3 dimensions de la notion d’abstraction :</p>
+<ul>
+  <li>Délimitation d’un concept</li>
+  <li>Identification des différences entre plusieurs concepts</li>
+  <li>Rapprochement des points communs entre différents concepts</li>
+</ul>
+
+<h3 id="délimitation-dun-concept-dans-le-cadre-dune-application">Délimitation d’un concept (dans le cadre d’une application)</h3>
+<ul>
+  <li>Description des caratéristiques
+    <ul>
+      <li>Quelles sont les caractéristiques d’un <em>Employé</em> (nom, prénom…) ?</li>
+    </ul>
+  </li>
+  <li>Description des comportements
+    <ul>
+      <li>Que peut faire un <em>Manager</em>, que peut-on faire avec ?</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="identification-des-différences-entre-plusieurs-concepts">Identification des différences entre plusieurs concepts</h3>
+<ul>
+  <li>Quels sont les différences entre une <em>Voiture</em> et une <em>Moto</em> ?</li>
+</ul>
+
+<h3 id="rapprochement-des-points-communs-entre-différents-concepts">Rapprochement des points communs entre différents concepts</h3>
+<ul>
+  <li>Quels sont les points communs entre un <em>Chien</em> et un <em>Chat</em> ?</li>
+</ul>
+
+<h2 id="languages--environment-before-frameworks">Languages &amp; Environment before Frameworks</h2>
+
+<blockquote>
+  <p>Apprenez à utiliser les outils de développeurs</p>
+
+  <p>Maîtrisez les langages <em>clés</em></p>
+
+  <p>Comprenez les différents environnements d’exécution</p>
+</blockquote>
+
+<p>Avant tout, la maîtrise des outils de collaboration est primordiale.</p>
+<ul>
+  <li>Connaître au moins 1 Système de gestion de version (GIT, Subversion…)</li>
+  <li>Connaître le principe de “tickets” et savoir échanger au travers de ceux-ci</li>
+  <li>Maîtriser la communication numérique (logiciels de communication en direct, visio conférence, partage d’écran etc…)</li>
+</ul>
+
+<p>L’industrialisation des métiers du développement a amené une standardisation des profils de développeurs. 
+Les compétences requises dans bon nombre d’offres d’emploi ressemblent à:</p>
+<ul>
+  <li>Matrise du Framework “Machin”</li>
+  <li>Expérience du CMS “Truc” demandée</li>
+  <li>Connaissance de la stack “Pierre, Paul, Jacques” est un +</li>
+</ul>
+
+<p>Gardez en mémoire que les différents <em>Frameworks</em> et <em>CMS</em> (Content Management System) s’appuient tous sur un ou plusieurs langages.
+Maîtrisez les langages servant de support aux frameworks doit donc rester votre priorité.</p>
+
+<p>De la même manière, ces langages et frameworks s’exécutent dans des environnements particuliers (serveur Apache, NodeJS, Androïd etc…).
+La compréhension de ces différents environnements est indispensable.</p>
+
+<p>Par exemple (exemples d’illustration, simplifiés):</p>
+<ul>
+  <li>Pour un projet Symfony, vous aurez besoin de PHP, HTML, CSS, SQL et un serveur Web</li>
+  <li>Pour un projet AngularJS, vous aurez besoin de Javascript, HTML, CSS, SQL et d’un serveur NodeJS</li>
+  <li>Pour un projet WPF, vous aurez besoin de C#, XAML, XML, VisualStudio IDE, .NET Framework</li>
+</ul>
+
+<p>Chaque type d’application nécessite la connaissance de ses propres langages et environnements.</p>
+
+<p>Envisagez votre apprentissage des Frameworks et CMS après avoir acquis les fondamentaux du développement : algorithmes, abstraction, outils.</p>
+
+<h2 id="keep-it-simple-stupid">Keep It Simple, Stupid</h2>
+
+<p>Suivez le principe <strong>KISS</strong> (Keep It Simple, Stupid) qui stipule que la plupart des systèmes fonctionnent mieux s’ils restent simples et non compliqués ; par conséquent, la simplicité doit être un objectif clé de la conception et toute complexité inutile doit être évitée. Il faut impérativement se poser la question : quelle est la chose la plus simple qui puisse fonctionner ? Une fois que vous l’avez définie, vous devez l’essayer. Si elle ne fonctionne pas, il faut alors passer à la seconde chose la plus simple etc…</p>
+
+<h2 id="you-arent-gonna-need-it">You Aren’t Gonna Need It</h2>
+
+<p>Appliquez le principe <strong>YAGNI</strong> (You Aren’t Gonna Need It) qui stipule qu’un développeur ne doit ajouter aucune fonctionnalité avant que cela soit jugé nécessaire. D’ailleurs, en ce qui concerne les fonctionnalités en général, “You Aren’t Gonna Need It”.</p>
+
+<h2 id="avoid-learning-anything-new">Avoid Learning Anything New</h2>
+
+<p>Respectez le précepte <strong>ALAN</strong> (Avoid Learning Anything New). Les différents langages, environnements et outils vont et viennent, et chacun d’entre eux requiert l’apprentissage d’un nouvel ensemble de faits, de pratiques et d’une mentalité. Et ils vont probablement s’en aller. Aussi, il est recommandé de n’apprendre quelque chose de nouveau que quand vous y êtes contraint.</p>
+
+<hr />
+
+<h2 id="pour-résumer-vos-priorités">Pour résumer vos priorités</h2>
+<ol>
+  <li>Raisonnement logique</li>
+  <li>Abstraction</li>
+  <li>Algorithmes</li>
+</ol>
+
+<p>et bien sur…</p>
+
+<ul>
+  <li>NEVER TRUST USER INPUT</li>
+</ul>
+ 
+    <nav class="container subject">
+      <h2>Tous les guides</h2>
+      <ul>
+        
+        
+        <li><a href="/guides/">Guides de Démarrage</a></li>
+        
+        <li><a href="/guides/fondamentaux">Les principes fondamentaux du développement</a></li>
+        
+        <li><a href="/guides/veille">Les principes fondamentaux de la veille technologique</a></li>
+        
+      </ul>
+    </nav>
+</section>
+    </main>
+    <footer id="bot">
+        &copy; Copyright <a href="https://arfp.github.io">ARFP</a> &middot; <a href="https://github.com/ARFP/arfp.github.io/blob/main/CONTRIBUTING.md">Contribuer</a> &middot; <a href="https://devoldere.net">Contacter le webmaster</a>
+    </footer>
+</body>
+</html>
