@@ -10,6 +10,7 @@
 *.userosscache
 *.sln.docstates
 
+test/*
 docs/_site
 docs/.sass-cache
 docs/.jekyll-cache
