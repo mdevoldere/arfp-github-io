@@ -59,6 +59,7 @@ defaults:
   - 
     scope:
       path: "guides"
+      type: pages
     values:
       layout: "guide"
       type: guide
