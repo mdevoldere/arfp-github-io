@@ -29,7 +29,7 @@ sass:
   style: compact
   sass_dir: _sass
 
-markdown: kramdown
+#markdown: kramdown
 #kramdown:
 #  parse_block_html: true
 
