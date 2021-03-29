@@ -40,6 +40,8 @@ sass:
 collections:
   docs:
     output: true 
+  tp:
+    output: true 
 #  guides:
 #    output: true 
 
@@ -52,17 +54,24 @@ defaults:
       layout: "default"
   - 
     scope:
-      path: "_docs"
-    values:
-      layout: "doc"
-      type: doc
-  - 
-    scope:
       path: "guides"
       type: pages
     values:
       layout: "guide"
       type: guide
+  - 
+    scope:
+      path: "a-propos"
+      type: pages
+    values:
+      layout: "default"
+      type: about
+  - 
+    scope:
+      path: "_docs"
+    values:
+      layout: "doc"
+      type: doc
   - 
     scope:
       path: "_docs/algo"

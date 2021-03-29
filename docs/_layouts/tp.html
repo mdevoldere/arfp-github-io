@@ -1,0 +1,8 @@
+{% include _header.html %}
+{% assign related_tiles = site.tp | where_exp: "item", "item.type != 'docs'" | where_exp: "item", " item.index == true" | sort: 'order' %}
+<section class="container">
+  <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+  {{ content }}
+  {% include _tiles_alt.html tiles=related_tiles title="Contenu disponible" %}
+</section>
+{% include _footer.html %}
