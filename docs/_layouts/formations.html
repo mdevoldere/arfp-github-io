@@ -1,7 +1,7 @@
 {% include _header.html %}
 <section class="container">
   <header class="flex2">
-    <div><img src="{{ page.image }}" alt="{{ page.title }}" style="margin-left:0"></div>
+    <div><img src="{{ page.image | absolute_url }}" alt="{{ page.title }}" style="margin-left:0"></div>
     <div>{{ content }}</div>
   </header>
   <article>
